@@ -120,9 +120,9 @@ export default function Contact() {
           <p className="text-[28px] font-medium text-black mb-8 tracking-tight">
             Trusted by many
           </p>
-          <div className="w-full flex items-center justify-between relative overflow-hidden h-[80px]">
+          <div className="w-full flex items-center justify-between relative overflow-hidden h-[100px]">
             {/* Left Bracket */}
-            <span className="text-[#ff5100] text-[65px] font-medium absolute left-0 z-30 leading-none -top-2 bg-[#fffff0] pr-2 pointer-events-none">[</span>
+            <span className="text-[#ff5100] text-[75px] font-medium absolute left-0 z-30 leading-none -top-2 bg-[#fffff0] pr-2 pointer-events-none">[</span>
             
             {/* Logo Ticker Container */}
             <div className="w-full relative overflow-hidden h-full z-10 pl-[30px] pr-[30px]">
@@ -134,7 +134,7 @@ export default function Contact() {
                 {Array.from({ length: 30 }).map((_, index) => {
                   const logoIndex = (index % 15) + 1;
                   return (
-                    <div key={index} className="h-[40px] w-[140px] mx-[10px] relative flex items-center justify-center shrink-0 transition-all duration-300">
+                    <div key={index} className="h-[56px] w-[196px] mx-[10px] relative flex items-center justify-center shrink-0 transition-all duration-300">
                       <img 
                         src={`/clientlogo/logo-${logoIndex}.png`} 
                         alt={`Client Logo ${logoIndex}`} 
@@ -147,7 +147,7 @@ export default function Contact() {
             </div>
 
             {/* Right Bracket */}
-            <span className="text-[#ff5100] text-[65px] font-medium absolute right-0 z-30 leading-none -top-2 bg-[#fffff0] pl-2 pointer-events-none">]</span>
+            <span className="text-[#ff5100] text-[75px] font-medium absolute right-0 z-30 leading-none -top-2 bg-[#fffff0] pl-2 pointer-events-none">]</span>
           </div>
         </section>
 

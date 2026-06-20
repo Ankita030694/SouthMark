@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -67,11 +68,11 @@ export function MobileNav() {
 
           {/* Links Section */}
           <div className="absolute top-24 right-4 flex flex-col items-end gap-6 font-medium text-xl text-white">
-            <a href="#" className="hover:opacity-80 transition-opacity">HOME</a>
-            <a href="#" className="hover:opacity-80 transition-opacity">ABOUT US</a>
+            <Link href="/" className="hover:opacity-80 transition-opacity">HOME</Link>
+            <Link href="/about" className="hover:opacity-80 transition-opacity">ABOUT US</Link>
             <a href="#" className="hover:opacity-80 transition-opacity">PROJECTS</a>
             <a href="#" className="hover:opacity-80 transition-opacity">BLOGS</a>
-            <a href="#" className="hover:opacity-80 transition-opacity">CONTACT US</a>
+            <Link href="/contact" className="hover:opacity-80 transition-opacity">CONTACT US</Link>
           </div>
 
           {/* Footer Info Section */}

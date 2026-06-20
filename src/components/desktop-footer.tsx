@@ -72,7 +72,7 @@ export const DesktopFooter = () => {
               {[
                 { name: 'Home', href: '/' },
                 { name: 'Services', href: '#' },
-                { name: 'About', href: '#' },
+                { name: 'About', href: '/about' },
                 { name: 'Projects', href: '#' },
                 { name: 'Contact', href: '/contact' }
               ].map((link) => (

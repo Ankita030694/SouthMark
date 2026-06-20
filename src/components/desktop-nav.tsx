@@ -34,7 +34,7 @@ export const DesktopNav = () => {
         {/* Links */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-[32px]">
           <Link href="/" className="text-white text-[20px] hover:opacity-80 transition-opacity whitespace-nowrap">Home</Link>
-          <a href="#" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">About Us</a>
+          <Link href="/about" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">About Us</Link>
           <a href="#" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Services</a>
           <a href="#" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Case Studies</a>
           <Link href="/contact" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Contact</Link>
