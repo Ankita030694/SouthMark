@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export const MobileFooter = () => {
   return (
@@ -31,10 +32,16 @@ export const MobileFooter = () => {
       <div className="flex flex-col mb-16 pl-1">
         <p className="text-[16px] text-black/65 mb-4 font-sans">Navigation</p>
         <nav className="flex flex-col gap-3">
-          {["Home", "Services", "About", "Projects", "Contact"].map((item) => (
-            <a key={item} href="#" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
-              {item}
-            </a>
+          {[
+            { name: 'Home', href: '/' },
+            { name: 'Services', href: '#' },
+            { name: 'About', href: '/about' },
+            { name: 'Projects', href: '#' },
+            { name: 'Contact', href: '/contact' }
+          ].map((item) => (
+            <Link key={item.name} href={item.href} className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
+              {item.name}
+            </Link>
           ))}
         </nav>
       </div>
