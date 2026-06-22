@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const ArrowRightIcon = () => (
 // ... existing ArrowRightIcon ...
@@ -11,6 +12,16 @@ const ArrowRightIcon = () => (
 );
 
 export const DesktopNav = () => {
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   return (
     <div className="w-full px-6 md:px-10 py-4 flex flex-col gap-3 max-w-[1280px] mx-auto">
       {/* Top Bar */}
@@ -25,19 +36,30 @@ export const DesktopNav = () => {
         {/* Logo */}
         <div className="flex items-center shrink-0">
           <Link href="/">
-            <span className="text-white text-[36px] font-medium tracking-tight font-sans mt-1 cursor-pointer">
-              Southern
-            </span>
+            <div className="h-10 w-10 rounded-full border-2 border-white bg-white/20 flex items-center justify-center cursor-pointer">
+              <span className="text-white text-xs font-bold">SM</span>
+            </div>
           </Link>
         </div>
 
         {/* Links */}
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-[32px]">
-          <Link href="/" className="text-white text-[20px] hover:opacity-80 transition-opacity whitespace-nowrap">Home</Link>
-          <Link href="/about" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">About Us</Link>
-          <a href="#" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Services</a>
-          <a href="#" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Case Studies</a>
-          <Link href="/contact" className="text-white/65 text-[20px] hover:text-white transition-colors whitespace-nowrap">Contact</Link>
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link 
+                key={link.name}
+                href={link.href} 
+                className={`text-[20px] transition-all whitespace-nowrap ${
+                  isActive 
+                    ? "text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" 
+                    : "text-white/65 hover:text-white"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA Button */}

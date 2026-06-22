@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 const ArrowRightIcon = () => (
   <svg className="w-[21px] h-[21px] text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -38,22 +39,24 @@ export const DesktopCaseStudies = () => {
         </div>
 
         {/* Explore Projects Button */}
-        <button 
-          className="relative w-[318px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] overflow-hidden shadow-[0px_6px_16px_rgba(255,81,0,0.35)] hover:shadow-[0px_8px_20px_rgba(255,81,0,0.5)] transition-shadow group cursor-pointer"
-          aria-label="Explore Projects"
-        >
-          {/* Inner Left Pill */}
-          <div className="absolute left-0 top-0 w-[225px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center pl-[35px] transform group-hover:translate-x-[3px] transition-transform duration-300 z-10">
-            <span className="font-medium text-[25px] text-white tracking-tight">
-              Explore Projects
-            </span>
-          </div>
-          
-          {/* Right Arrow Icon */}
-          <div className="absolute right-[35px] top-1/2 -translate-y-1/2 flex items-center justify-center transform group-hover:translate-x-[5px] transition-transform duration-300 z-0">
-            <ArrowRightIcon />
-          </div>
-        </button>
+        <Link href="/contact">
+          <button 
+            className="relative w-[318px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] overflow-hidden shadow-[0px_6px_16px_rgba(255,81,0,0.35)] hover:shadow-[0px_8px_20px_rgba(255,81,0,0.5)] transition-shadow group cursor-pointer"
+            aria-label="Explore Projects"
+          >
+            {/* Inner Left Pill */}
+            <div className="absolute left-0 top-0 w-[225px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center pl-[35px] transform group-hover:translate-x-[3px] transition-transform duration-300 z-10">
+              <span className="font-medium text-[25px] text-white tracking-tight">
+                Explore Projects
+              </span>
+            </div>
+            
+            {/* Right Arrow Icon */}
+            <div className="absolute right-[35px] top-1/2 -translate-y-1/2 flex items-center justify-center transform group-hover:translate-x-[5px] transition-transform duration-300 z-0">
+              <ArrowRightIcon />
+            </div>
+          </button>
+        </Link>
 
       </div>
     </section>

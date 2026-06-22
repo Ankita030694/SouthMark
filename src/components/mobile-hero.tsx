@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export function MobileHero() {
   return (
     <div className="w-full flex flex-col items-center pt-8 pb-12 relative overflow-hidden">
@@ -19,24 +21,26 @@ export function MobileHero() {
 
       {/* CTA Button */}
       <div className="mt-12 z-10">
-        <button 
-          className="relative w-[213px] h-[56px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] overflow-hidden shadow-[0px_4px_14px_rgba(255,81,0,0.35)] hover:shadow-[0px_6px_20px_rgba(255,81,0,0.5)] transition-shadow group cursor-pointer"
-          aria-label="Start Growing"
-        >
-          {/* Inner Left Pill with right shadow */}
-          <div className="absolute left-[5px] top-0 w-[158px] h-[56px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[3px_0px_2px_rgba(0,0,0,0.2)] flex items-center justify-center transform group-hover:translate-x-[2px] transition-transform duration-300">
-            <span className="font-semibold text-[17px] text-white tracking-tight whitespace-nowrap">
-              Start Growing
-            </span>
-          </div>
-          
-          {/* Right Arrow Icon */}
-          <div className="absolute right-[16px] top-1/2 -translate-y-1/2 flex items-center justify-center transform group-hover:translate-x-[2px] transition-transform duration-300">
-            <svg className="w-[18px] h-[18px] text-white" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-            </svg>
-          </div>
-        </button>
+        <Link href="/contact" className="w-full relative z-20">
+          <button 
+            className="w-full relative h-[63px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] overflow-hidden shadow-[0px_6px_16px_rgba(255,81,0,0.35)] group cursor-pointer"
+            aria-label="Start Growing"
+          >
+            {/* Inner Left Pill */}
+            <div className="absolute left-[0px] top-0 w-[calc(100%-60px)] h-[63px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center justify-center z-10">
+              <span className="font-medium text-[18px] text-white tracking-tight whitespace-nowrap">
+                Start Growing
+              </span>
+            </div>
+            
+            {/* Right Arrow Icon */}
+            <div className="absolute right-[24px] top-1/2 -translate-y-1/2 flex items-center justify-center z-0">
+              <svg className="w-[21px] h-[21px] text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+              </svg>
+            </div>
+          </button>
+        </Link>
       </div>
 
       {/* Info Text & Ratings (Bottom Section) */}

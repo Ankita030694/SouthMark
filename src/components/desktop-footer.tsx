@@ -71,9 +71,9 @@ export const DesktopFooter = () => {
             <nav className="flex flex-col gap-4">
               {[
                 { name: 'Home', href: '/' },
-                { name: 'Services', href: '#' },
+                { name: 'Services', href: '/services' },
                 { name: 'About', href: '/about' },
-                { name: 'Projects', href: '#' },
+                { name: 'Projects', href: '/contact' },
                 { name: 'Contact', href: '/contact' }
               ].map((link) => (
                 <Link 
@@ -94,7 +94,7 @@ export const DesktopFooter = () => {
               {['Instagram', 'LinkedIn', 'X'].map((link) => (
                 <a 
                   key={link} 
-                  href="#" 
+                  href="/contact" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-[28px] lg:text-[36px] text-black font-normal hover:text-white transition-colors duration-300"

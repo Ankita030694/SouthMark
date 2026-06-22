@@ -34,9 +34,9 @@ export const MobileFooter = () => {
         <nav className="flex flex-col gap-3">
           {[
             { name: 'Home', href: '/' },
-            { name: 'Services', href: '#' },
+            { name: 'Services', href: '/services' },
             { name: 'About', href: '/about' },
-            { name: 'Projects', href: '#' },
+            { name: 'Projects', href: '/contact' },
             { name: 'Contact', href: '/contact' }
           ].map((item) => (
             <Link key={item.name} href={item.href} className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
@@ -51,7 +51,7 @@ export const MobileFooter = () => {
         <p className="text-[16px] text-black/65 mb-4 font-sans">Social</p>
         <nav className="flex flex-col gap-3">
           {["Instagram", "LinkedIn", "X"].map((item) => (
-            <a key={item} href="#" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
+            <a key={item} href="/contact" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
               {item}
             </a>
           ))}

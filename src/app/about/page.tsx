@@ -6,6 +6,14 @@ import { MobileFooter } from "@/components/mobile-footer";
 import { MobileFaq } from "@/components/mobile-faq";
 import { DesktopAboutHero } from "@/components/desktop-about-hero";
 import { DesktopAboutTeam } from "@/components/desktop-about-team";
+import { Cta } from "@/components/cta";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Southern Marketing",
+  description: "Learn more about Southern Marketing and our team.",
+};
 
 export default function About() {
   return (
@@ -21,6 +29,8 @@ export default function About() {
         <DesktopAboutHero />
         <DesktopAboutTeam />
       </main>
+
+      <Cta />
 
       <div className="hidden md:block">
         <DesktopFaq />

@@ -35,11 +35,11 @@ export const MobileServices = () => {
   return (
     <div className="w-full relative bg-[#fffff0] pt-16 pb-16 overflow-hidden">
       {/* Orange Bars Graphic */}
-      <div className="absolute left-0 top-0 flex gap-1 h-[240px]">
-        <div className="w-[18px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
+      <div className="absolute left-0 top-0 flex gap-2 h-[240px]">
         <div className="w-[24px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-        <div className="w-[30px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-        <div className="w-[36px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
+        <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
+        <div className="w-[40px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
+        <div className="w-[48px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
       </div>
 
       <div className="px-5 relative z-10">

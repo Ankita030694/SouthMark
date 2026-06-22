@@ -3,6 +3,14 @@ import { DesktopFaq } from "@/components/desktop-faq";
 import { DesktopFooter } from "@/components/desktop-footer";
 import { MobileNav } from "@/components/mobile-nav";
 import { MobileFooter } from "@/components/mobile-footer";
+import { Cta } from "@/components/cta";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Southern Marketing",
+  description: "Get in touch with Southern Marketing for your next project.",
+};
 
 const ArrowUpRight = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff5100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -99,15 +107,15 @@ export default function Contact() {
 
             {/* Social Links */}
             <div className="flex flex-col gap-8">
-              <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                 <ArrowUpRight />
                 <span className="text-[30px] font-medium tracking-tight">Instagram</span>
               </a>
-              <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                 <ArrowUpRight />
                 <span className="text-[30px] font-medium tracking-tight">LinkedIn</span>
               </a>
-              <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                 <ArrowUpRight />
                 <span className="text-[30px] font-medium tracking-tight">Twitter/X</span>
               </a>
@@ -151,6 +159,7 @@ export default function Contact() {
           </div>
         </section>
 
+        <Cta />
         <MobileFooter />
       </div>
 
@@ -190,15 +199,15 @@ export default function Contact() {
 
               {/* Social Links */}
               <div className="flex flex-col gap-8">
-                <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                   <ArrowUpRight />
                   <InstagramIcon />
                 </a>
-                <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                   <ArrowUpRight />
                   <LinkedinIcon />
                 </a>
-                <a href="#" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
+                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
                   <ArrowUpRight />
                   <XIcon />
                 </a>
@@ -283,6 +292,7 @@ export default function Contact() {
           </div>
         </section>
 
+        <Cta />
         <DesktopFaq />
         <DesktopFooter />
       </div>

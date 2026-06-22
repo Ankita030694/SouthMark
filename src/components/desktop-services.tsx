@@ -64,15 +64,15 @@ export const DesktopServices = () => {
       <div className="flex w-full mb-24 items-start relative pt-16">
         
         {/* Left Side: Abstract Stripe Graphic (Absolute to touch the top edge of the section) */}
-        <div className="absolute top-0 left-0 w-[30%] lg:w-[25%] flex h-[350px] gap-3">
-          <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
+        <div className="absolute top-0 left-0 w-[45%] lg:w-[40%] flex h-[350px] gap-4 lg:gap-6">
+          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
+          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
+          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
+          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
         </div>
 
         {/* Right Side: Title Area (Offset to make room for absolute stripes) */}
-        <div className="w-full ml-[30%] lg:ml-[25%] pl-8 xl:pl-16 flex flex-col items-start max-w-[700px] z-10">
+        <div className="w-full ml-[50%] lg:ml-[45%] pl-8 xl:pl-16 flex flex-col items-start max-w-[700px] z-10">
           <p className="font-medium text-[19px] lg:text-[24px] mb-5 tracking-wide">
             <span className="text-[#ff5100]">[</span>
             <span className="text-black mx-2">SERVICES</span>

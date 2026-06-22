@@ -19,6 +19,15 @@ import { DesktopFaq } from "@/components/desktop-faq";
 import { DesktopMarquee } from "@/components/desktop-marquee";
 import { DesktopFooter } from "@/components/desktop-footer";
 
+import { Cta } from "@/components/cta";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home | Southern Marketing",
+  description: "Welcome to Southern Marketing.",
+};
+
 export default function Home() {
   return (
     <>
@@ -30,6 +39,7 @@ export default function Home() {
         <MobileStats />
         <MobileComparison />
         <MobileServices />
+        <Cta />
         <MobileFaq />
         <MobileFooter />
       </div>
@@ -43,6 +53,7 @@ export default function Home() {
         <DesktopComparison />
         <DesktopCaseStudies />
         <DesktopServices />
+        <Cta />
         <DesktopFaq />
         <DesktopMarquee />
         <DesktopFooter />

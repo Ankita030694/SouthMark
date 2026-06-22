@@ -2,11 +2,21 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navLinks = [
+    { name: "HOME", href: "/" },
+    { name: "ABOUT US", href: "/about" },
+    { name: "SERVICES", href: "/services" },
+    { name: "BLOGS", href: "/blogs" },
+    { name: "CONTACT US", href: "/contact" },
+  ];
 
   return (
     <div className="w-full relative z-50">
@@ -68,11 +78,23 @@ export function MobileNav() {
 
           {/* Links Section */}
           <div className="absolute top-24 right-4 flex flex-col items-end gap-6 font-medium text-xl text-white">
-            <Link href="/" className="hover:opacity-80 transition-opacity">HOME</Link>
-            <Link href="/about" className="hover:opacity-80 transition-opacity">ABOUT US</Link>
-            <a href="#" className="hover:opacity-80 transition-opacity">PROJECTS</a>
-            <a href="#" className="hover:opacity-80 transition-opacity">BLOGS</a>
-            <Link href="/contact" className="hover:opacity-80 transition-opacity">CONTACT US</Link>
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link 
+                  key={link.name} 
+                  href={link.href} 
+                  className={`transition-all ${
+                    isActive 
+                      ? "opacity-100 drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" 
+                      : "opacity-80 hover:opacity-100"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Footer Info Section */}
@@ -82,10 +104,10 @@ export function MobileNav() {
               <p className="leading-tight text-2xl">+62 - XXXXX XXXXX</p>
             </div>
             <div className="flex gap-2.5 items-center">
-              <a href="#" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
+              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
                 <FontAwesomeIcon icon={faInstagram} className="text-lg" />
               </a>
-              <a href="#" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
+              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
                 <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
               </a>
             </div>
