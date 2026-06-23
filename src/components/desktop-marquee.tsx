@@ -31,7 +31,7 @@ export const DesktopMarquee = () => {
   const multipliedOrangeItems = [...orangeStripItems, ...orangeStripItems, ...orangeStripItems, ...orangeStripItems];
 
   return (
-    <section className="w-full bg-[#fffff0] h-[500px] relative flex items-center justify-center overflow-hidden z-10 my-20">
+    <section className="w-full bg-[#fffff0] h-[500px] relative flex items-center justify-center overflow-hidden z-10 mt-[44px] mb-20">
       
       <style>{`
         @keyframes marquee {

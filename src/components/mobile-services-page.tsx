@@ -6,32 +6,60 @@ import Link from "next/link";
 export const MobileServicesPage = () => {
   const services = [
     {
-      title: "Custom Code",
-      description: "We engineer custom websites, robust web platforms, and mobile applications built for uncompromising speed, top-tier security, and true scalability. Our development approach guarantees seamless, highly performant user experiences that adapt effortlessly to your evolving business needs.",
-      timeline: "4 - 8 Weeks",
-      deliverables: "Websites • Mobile Apps",
-      image: "/services-placement.png"
+      title: "Website Revamp",
+      description: "We modernize your existing site with improved functionality, faster load speeds, and fresh aesthetics.",
+      timeline: "2-3 Weeks",
+      deliverables: "Redesign • Optimization",
+      image: "/services/website-revamp.png"
     },
     {
-      title: "UI/UX Design",
-      description: "Our user-focused interfaces are meticulously designed to ensure absolute clarity, frictionless navigation, and significantly improved conversion rates. Every visual decision is carefully crafted to remove friction, enhance general usability, and create an intuitive product experience.",
-      timeline: "5 - 7 Days",
-      deliverables: "Wireframes • High-fidelity UI",
-      image: "/services-placement.png"
+      title: "Branding & Creative Strategy",
+      description: "Create memorable brand identities, impactful visuals, and consistent messaging that drive growth.",
+      timeline: "2 – 4 Weeks",
+      deliverables: "Brand Identity • Brand Guidelines",
+      image: "/services/branding.png"
     },
     {
-      title: "Digital Marketing",
-      description: "We implement comprehensive, data-driven marketing strategies uniquely tailored to amplify your brand's voice and increase digital visibility across all relevant channels. Our goal is to convert passing interest into long-term loyalty, generating reliable and measurable business results.",
-      timeline: "Ongoing",
-      deliverables: "Campaigns • Ad Creatives",
-      image: "/services-placement.png"
+      title: "Photography & Videography",
+      description: "Create high-quality visual content that captures attention, builds trust, and drives engagement.",
+      timeline: "1 – 3 Weeks",
+      deliverables: "High-Res Photos • Promo Videos",
+      image: "/services/photography.png"
     },
     {
-      title: "SEO Optimization",
-      description: "We deploy strategic, white-hat SEO solutions designed to dramatically improve your search engine rankings and secure prime positions for high-intent keywords. Through deep technical audits and intelligent on-page optimization, we drive consistent organic traffic straight to your website.",
-      timeline: "Ongoing",
-      deliverables: "Audits • Keyword Strategy",
-      image: "/services-placement.png"
+      title: "Website Development",
+      description: "We create responsive, high-converting websites optimized for user experience and modern design.",
+      timeline: "4-5 Weeks",
+      deliverables: "Responsive Sites • Landing Pages",
+      image: "/services/website-development.png"
+    },
+    {
+      title: "Performance Marketing",
+      description: "We drive measurable growth and high-quality leads through targeted, data-driven ad campaigns.",
+      timeline: "2-3 Weeks",
+      deliverables: "Ad Campaigns • Analytics Reports",
+      image: "/services/performance-marketing.png"
+    },
+    {
+      title: "SEO",
+      description: "We boost your search rankings and drive consistent organic traffic with proven strategies.",
+      timeline: "3-4 Weeks",
+      deliverables: "Keyword Strategy • Traffic Growth",
+      image: "/services/seo.png"
+    },
+    {
+      title: "Application Development",
+      description: "We engineer robust, intuitive mobile and web applications tailored to your business goals.",
+      timeline: "5-6 Weeks",
+      deliverables: "iOS/Android Apps • Web Apps",
+      image: "/services/app-development.png"
+    },
+    {
+      title: "Social Media Management",
+      description: "We build vibrant online communities through engaging content and strategic brand storytelling.",
+      timeline: "1-2 Weeks",
+      deliverables: "Content Calendar • Community Engagement",
+      image: "/services/social-media.png"
     }
   ];
 

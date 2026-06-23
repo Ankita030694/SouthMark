@@ -2,143 +2,149 @@
 
 import React from "react";
 
-// Fallback SVG Icons to match the requested services
-const CodeIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="16 18 22 12 16 6"></polyline>
-    <polyline points="8 6 2 12 8 18"></polyline>
+// Icons
+const ClockIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-black/40 shrink-0">
+    <circle cx="12" cy="12" r="10" />
+    <polyline points="12 6 12 12 16 14" />
   </svg>
 );
 
-const DesignIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
-    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
-    <path d="M2 2l7.586 7.586"></path>
-    <circle cx="11" cy="11" r="2"></circle>
+const ArrowRightUpIcon = () => (
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ff5100" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:rotate-45 transition-transform duration-300">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="7 7 17 7 17 17" />
   </svg>
 );
 
-const MarketingIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="11 19 2 12 11 5 11 19"></polygon>
-    <path d="M22 12h-4"></path>
-    <path d="M11 5a10 10 0 0 1 0 14"></path>
-  </svg>
-);
-
-const SeoIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M2 12h4l3-9 5 18 3-9h5"></path>
-  </svg>
-);
+// Service Item Component
+const services = [
+  {
+    num: "01",
+    title: "Website/App Revamp",
+    desc: "We modernize your existing site/app with improved functionality, faster load speeds, and fresh aesthetics.",
+    time: "2 - 4 weeks",
+    icon: <img src="/74c0af15118c1b2a2c39e1511c12af1dfd68bbda.svg" alt="Website/App Revamp" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "02",
+    title: "Branding & Creative Strategy",
+    desc: "Create memorable brand identities, impactful visuals, and consistent messaging that drive growth.",
+    time: "2 - 4 weeks",
+    icon: <img src="/7b6d1a31b01642571f2ba8ae197279b79c46ed00.svg" alt="Branding & Creative Strategy" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "03",
+    title: "Social Media Management",
+    desc: "We build vibrant online communities through engaging content and strategic brand storytelling.",
+    time: "1 - 2 weeks",
+    icon: <img src="/fbf3bb63c485c87731f72b92377c293b49debc58.svg" alt="Social Media Management" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "04",
+    title: "SEO",
+    desc: "We boost your search rankings and drive consistent organic traffic with proven strategies.",
+    time: "3 - 4 weeks",
+    icon: <img src="/6d024c7b5b7156400997ad06258dcf9946364743.svg" alt="SEO" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "05",
+    title: "Application Development",
+    desc: "We engineer robust, intuitive mobile and web applications tailored to your business goals.",
+    time: "5 - 6 weeks",
+    icon: <img src="/dbb2cc477667c1535fbdfc2c6aa1ca82913f633a.svg" alt="Application Development" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "06",
+    title: "Photography & Videography",
+    desc: "Create high-quality visual content that captures attention, builds trust, and drives engagement.",
+    time: "1 - 3 weeks",
+    icon: <img src="/00cd375964412dedc26595d780eebba9baf9a5c4.svg" alt="Photography & Videography" className="w-[60px] h-[60px] object-contain" />
+  },
+  {
+    num: "07",
+    title: "Website Development",
+    desc: "We create responsive, high-converting websites optimized for user experience and modern design.",
+    time: "4 - 5 weeks",
+    icon: <img src="/6c4032a099bc8802dd11f6cbf1a0ab68c82963a0.svg" alt="Website Development" className="w-[60px] h-[60px] object-contain" />
+  }
+];
 
 export const DesktopServices = () => {
-  const services = [
-    {
-      title: "CUSTOM CODE",
-      description: "Custom websites and mobile applications built for speed, scalability, and seamless experiences that support business growth.",
-      icon: <CodeIcon />
-    },
-    {
-      title: "UI/UX DESIGN",
-      description: "Intuitive and user-focused designs that enhance engagement, improve usability, and create memorable digital experiences.",
-      icon: <DesignIcon />
-    },
-    {
-      title: "DIGITAL MARKETING",
-      description: "Data-driven marketing strategies designed to increase visibility, attract customers, and generate measurable business results.",
-      icon: <MarketingIcon />
-    },
-    {
-      title: "SEO OPTIMIZATION",
-      description: "Strategic SEO solutions that improve search rankings, drive organic traffic, and help businesses grow sustainably online.",
-      icon: <SeoIcon />
-    }
-  ];
-
   return (
-    <section className="w-full bg-[#fffff0] pb-20 pt-0 px-8 lg:px-[90px] flex flex-col relative z-10 overflow-hidden">
-      
-      {/* New Compact Services Header (Inspired by Services Page) */}
-      <div className="flex flex-col w-full mb-16 lg:mb-24 items-center relative pt-16 gap-8 md:gap-10 z-10">
-        <div className="w-full h-px bg-black/10 relative" />
+    <section className="w-full bg-[#fffff0] pt-24 pb-20 px-8 lg:px-[90px] flex justify-center relative z-10 mt-16">
+      <div className="w-full max-w-[1400px] flex items-start justify-between relative">
         
-        <h2 className="text-[50px] md:text-[80px] lg:text-[130px] font-semibold text-black text-center w-full leading-[1.1] lg:leading-[130px] tracking-tight px-4 mt-12 lg:mt-16">
-          SERVICES & EXPERTISE
-        </h2>
-      </div>
-
-      {/* Old Top Section: Graphic & Title (Commented out as requested) */}
-      {/*
-      <div className="flex w-full mb-24 items-start relative pt-16">
-        
-        <div className="absolute top-0 left-0 w-[45%] lg:w-[40%] flex h-[350px] gap-4 lg:gap-6">
-          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-          <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
-        </div>
-
-        <div className="w-full ml-[50%] lg:ml-[45%] pl-8 xl:pl-16 flex flex-col items-start max-w-[700px] z-10">
-          <p className="font-medium text-[19px] lg:text-[24px] mb-5 tracking-wide">
+        {/* Left Sticky Column */}
+        <div className="w-[45%] sticky top-32 flex flex-col items-start pr-12 relative">
+          <p className="font-medium text-[24px] mb-8 tracking-wide">
             <span className="text-[#ff5100]">[</span>
             <span className="text-black mx-2">SERVICES</span>
             <span className="text-[#ff5100]">]</span>
           </p>
           
-          <h2 className="text-[56px] lg:text-[80px] xl:text-[104px] font-semibold text-black leading-[0.9] tracking-tight mb-8">
+          <h2 className="text-[80px] xl:text-[110px] font-bold text-black leading-[0.9] tracking-tight mb-8">
             WHAT WE<br />DO BEST
           </h2>
           
-          <p className="text-[16px] lg:text-[21px] xl:text-[24px] text-black/65 font-normal leading-[1.3] max-w-[560px]">
+          <p className="text-[20px] xl:text-[24px] text-black/65 font-normal leading-[1.4] max-w-[500px] mb-12">
             From web development and branding to SEO and marketing, we create digital solutions designed to drive measurable growth.
           </p>
-        </div>
-      </div>
-      */}
 
-      {/* Bottom Section: Services Bento Grid */}
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10 max-w-[1280px] mx-auto">
-        {services.map((service, index) => {
-          const isLong = index === 0 || index === 3;
+          <div className="flex items-center gap-6">
+            <a href="/contact" className="w-[80px] h-[80px] rounded-full border border-black/20 flex items-center justify-center hover:bg-[#ff5100]/5 transition-colors group shrink-0">
+              <ArrowRightUpIcon />
+            </a>
+            <div className="flex flex-col gap-1">
+              <p className="text-[18px] text-black font-medium leading-tight">Let's build something</p>
+              <p className="text-[18px] text-black font-medium leading-tight">great together.</p>
+              <a href="/contact" className="text-[#ff5100] text-[18px] font-bold tracking-wide mt-1 hover:opacity-80 transition-opacity flex items-center gap-2">
+                <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
+                GET IN TOUCH
+              </a>
+            </div>
+          </div>
           
-          return (
-            <div 
-              key={index} 
-              className={`flex ${isLong ? 'lg:col-span-2 flex-col md:flex-row md:items-center lg:gap-12' : 'lg:col-span-1 flex-col'} bg-white rounded-[32px] p-8 lg:p-12 border border-black/5 shadow-sm hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative`}
-            >
-              {/* Subtle background gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#ff5100]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+          {/* Vertical Divider Line */}
+          <div className="absolute right-0 top-0 bottom-0 w-[1px] bg-[#ff5100] hidden md:block"></div>
+        </div>
 
-              <div className={`w-[80px] h-[80px] shrink-0 bg-[#ff5100] rounded-[24px] flex items-center justify-center shadow-[0_4px_20px_rgba(255,81,0,0.3)] group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-500 relative z-10 ${isLong ? 'mb-8 md:mb-0 md:mr-4' : 'mb-8'}`}>
-                <div className="scale-90">
+        {/* Right Scrolling Column */}
+        <div className="w-[50%] flex flex-col pl-4">
+          {services.map((service, index) => (
+            <div key={index} className="flex flex-col w-full border-t border-black/10 py-12 first:border-t-0 first:pt-0">
+               <div className="flex items-center">
+                
+                {/* Number & Divider */}
+                <div className="flex items-center gap-6 mr-8 shrink-0 h-[98px]">
+                  <span className="text-[100px] xl:text-[110px] font-medium leading-[0.8] tracking-tighter text-black flex items-center h-full">{service.num}</span>
+                  <div className="w-[2px] h-full bg-[#ff5100]"></div>
+                </div>
+
+                {/* Icon */}
+                <div className="w-[98px] h-[98px] rounded-full border-[2px] border-black flex items-center justify-center shrink-0 mr-8">
                   {service.icon}
                 </div>
-              </div>
-              
-              <div className="flex flex-col relative z-10 flex-1">
-                <h3 className={`font-semibold text-black leading-tight tracking-tight group-hover:text-[#ff5100] transition-colors duration-300 ${isLong ? 'text-[32px] lg:text-[40px] mb-4' : 'text-[28px] lg:text-[32px] mb-4'}`}>
-                  {service.title}
-                </h3>
-                <p className={`text-black/65 leading-[1.6] font-normal ${isLong ? 'text-[16px] lg:text-[18px] max-w-[600px]' : 'text-[15px] lg:text-[16px]'}`}>
-                  {service.description}
-                </p>
-              </div>
-              
-              {/* Decorative corner icon for long bentos */}
-              {isLong && (
-                <div className="hidden lg:flex absolute top-8 right-8 w-12 h-12 rounded-full border border-black/5 items-center justify-center group-hover:bg-[#ff5100] group-hover:border-[#ff5100] transition-colors duration-300">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="stroke-black/30 group-hover:stroke-white transition-colors duration-300">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
 
+                {/* Content */}
+                <div className="flex flex-col flex-1 py-2">
+                  <h3 className="text-[28px] font-medium text-black mb-3 leading-tight">{service.title}</h3>
+                  <p className="text-[20px] text-black/60 leading-[1.4] mb-6 pr-4">{service.desc}</p>
+                  
+                  <div className="flex items-center gap-2">
+                    <ClockIcon />
+                    <p className="text-[18px] text-black/60 flex items-center">
+                      {service.time} <span className="text-[14px] ml-1">(Approximately)</span>
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
     </section>
   );
 };

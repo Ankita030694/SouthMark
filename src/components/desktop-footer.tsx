@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export const DesktopFooter = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] pt-32 pb-16 px-8 lg:px-[90px] relative z-10 overflow-hidden flex flex-col">
+    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] pt-10 pb-6 px-8 lg:px-[90px] relative z-10 overflow-hidden flex flex-col">
       
       {/* Top Row: Logo & Contact */}
-      <div className="flex w-full justify-between items-start mb-32">
+      <div className="flex w-full justify-between items-start mb-10">
         {/* Left: Logo & Description */}
         <div className="flex flex-col max-w-[800px]">
           <h2 className="text-[70px] lg:text-[85px] xl:text-[104px] font-bold leading-[0.9] tracking-tight mb-8">
@@ -28,62 +28,35 @@ export const DesktopFooter = () => {
           </p>
           <a 
             href="mailto:info@southernedgemarketing.com" 
-            className="text-[32px] lg:text-[44px] text-black font-normal hover:text-white transition-colors duration-300"
+            className="text-[16px] lg:text-[22px] text-black font-normal hover:text-white transition-colors duration-300"
           >
             info@southernedgemarketing.com
           </a>
         </div>
       </div>
 
-      {/* Middle Row: Newsletter & Links */}
-      <div className="flex w-full justify-between items-start mb-40">
+      {/* Middle Row: Links & Social */}
+      <div className="flex w-full justify-end items-start mb-12">
         
-        {/* Left: Newsletter */}
-        <div className="flex flex-col max-w-[500px]">
-          <p className="text-[18px] lg:text-[24px] text-black/65 mb-2">Newsletter</p>
-          <h3 className="text-[40px] lg:text-[52px] font-semibold text-black leading-none mb-10 tracking-tight">
-            STAY IN THE LOOP
-          </h3>
-          
-          <div className="flex items-end gap-6 w-full max-w-[450px]">
-            {/* Input Field with Bottom Border */}
-            <div className="flex-1 border-b border-black/30 pb-2 flex flex-col">
-              <input 
-                type="email" 
-                placeholder="contact@gmail.com" 
-                className="w-full bg-transparent text-[16px] lg:text-[20px] text-black placeholder:text-black/40 outline-none"
-              />
-            </div>
-            
-            {/* Join Button */}
-            <button className="h-[50px] lg:h-[60px] px-8 bg-white/90 rounded-full text-black font-medium text-[20px] lg:text-[24px] shadow-[0_4px_10px_rgba(0,0,0,0.1)] hover:bg-white transition-all hover:scale-105 active:scale-95 whitespace-nowrap border border-white/50 backdrop-blur-md">
-              Join
-            </button>
-          </div>
-        </div>
-
-        {/* Right: Navigation & Social Links */}
+        {/* Right: Lists */}
         <div className="flex gap-16 lg:gap-32 text-right">
-          
-          {/* Navigation */}
+
+          {/* Legal */}
           <div className="flex flex-col items-end">
-            <p className="text-[18px] lg:text-[24px] text-black/65 mb-6">Navigation</p>
+            <p className="text-[18px] lg:text-[24px] text-black/65 mb-6">Legal</p>
             <nav className="flex flex-col gap-4">
-              {[
-                { name: 'Home', href: '/' },
-                { name: 'Services', href: '/services' },
-                { name: 'About', href: '/about' },
-                { name: 'Projects', href: '/contact' },
-                { name: 'Contact', href: '/contact' }
-              ].map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href} 
-                  className="text-[28px] lg:text-[36px] text-black font-normal hover:text-white transition-colors duration-300"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              <Link 
+                href="/terms" 
+                className="text-[28px] lg:text-[36px] text-black font-normal hover:text-white transition-colors duration-300"
+              >
+                Terms & Conditions
+              </Link>
+              <Link 
+                href="/privacy" 
+                className="text-[28px] lg:text-[36px] text-black font-normal hover:text-white transition-colors duration-300"
+              >
+                Privacy Policy
+              </Link>
             </nav>
           </div>
 

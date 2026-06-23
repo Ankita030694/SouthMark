@@ -100,8 +100,7 @@ export function MobileNav() {
           {/* Footer Info Section */}
           <div className="absolute bottom-8 left-4 flex flex-col gap-4 items-start">
             <div className="flex flex-col font-medium gap-3 items-start text-white">
-              <p className="leading-tight text-sm">Sydney, Australia</p>
-              <p className="leading-tight text-2xl">+62 - XXXXX XXXXX</p>
+              <a href="tel:+919899238237" className="leading-tight text-2xl hover:opacity-85 transition-opacity">+91 9899238237</a>
             </div>
             <div className="flex gap-2.5 items-center">
               <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">

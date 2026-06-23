@@ -6,6 +6,8 @@ import { MobileFooter } from "@/components/mobile-footer";
 import { countryCodes } from "@/lib/countryCodes";
 import { NameInput } from "@/components/name-input";
 import { PhoneInput } from "@/components/phone-input";
+import { PhoneQrButton } from "@/components/phone-qr-button";
+import { MobileContactForm, DesktopContactForm } from "@/components/contact-forms";
 
 import { Metadata } from "next";
 
@@ -61,62 +63,7 @@ export default function Contact() {
               START A PROJECT :
             </h2>
             
-            <form className="flex flex-col gap-5">
-              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Name*</label>
-                <NameInput className="w-full bg-transparent outline-none text-[16px] text-black" />
-              </div>
-              
-              <div className="flex flex-row gap-4">
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2 w-[100px] shrink-0">
-                  <label className="text-[16px] text-[#626262] font-medium tracking-tight">Code*</label>
-                  <input 
-                    list="country-codes-mobile" 
-                    className="bg-transparent outline-none text-[16px] text-black w-full cursor-pointer" 
-                    placeholder="+Code"
-                  />
-                  <datalist id="country-codes-mobile">
-                    {countryCodes.map((c, i) => (
-                      <option key={`m-${i}`} value={`${c.flag} ${c.code}`}>{c.country}</option>
-                    ))}
-                  </datalist>
-                </div>
-                
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2 flex-1">
-                  <label className="text-[16px] text-[#626262] font-medium tracking-tight">Phone number*</label>
-                  <PhoneInput className="w-full bg-transparent outline-none text-[16px] text-black" />
-                </div>
-              </div>
-              
-              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                <label className="text-[16px] text-[#626262] font-medium tracking-tight">E-mail*</label>
-                <input type="email" className="w-full bg-transparent outline-none text-[16px] text-black" />
-              </div>
-              
-              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Service*</label>
-                <select className="w-full bg-transparent outline-none text-[16px] text-black cursor-pointer appearance-none" defaultValue="">
-                  <option value="" disabled>Select a service</option>
-                  <option value="web-development">Website Development</option>
-                  <option value="ui-ux-design">UI/UX Design</option>
-                  <option value="branding">Branding</option>
-                  <option value="digital-marketing">Digital Marketing</option>
-                  <option value="seo">SEO</option>
-                  <option value="social-media">Social Media Management</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              
-              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
-                <input type="text" className="w-full bg-transparent outline-none text-[16px] text-black" />
-              </div>
-
-              <button type="submit" className="w-full mt-2 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-3 flex items-center justify-center gap-[6px] shadow-[0_4px_15px_rgba(255,81,0,0.3)] hover:scale-[1.02] transition-transform active:scale-95">
-                <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
-                <span className="text-[20px] font-medium text-white shadow-inner tracking-wide">Get in touch</span>
-              </button>
-            </form>
+            <MobileContactForm />
           </div>
 
           {/* Description and Contact Details */}
@@ -132,9 +79,9 @@ export default function Contact() {
 
             <div className="flex flex-col gap-5">
               <p className="text-[20px] font-medium text-black/65">Contact Details</p>
-              <div className="flex flex-col gap-3 text-[28px] font-normal text-black leading-tight">
-                <a href="tel:+919899238237" className="hover:text-[#ff5100] transition-colors">+91 9899238237</a>
-                <p>info@southernedgemarketing.com</p>
+              <div className="flex flex-col gap-3 font-normal text-black leading-tight">
+                <a href="tel:+919899238237" className="text-[18px] hover:text-[#ff5100] transition-colors">+91 9899238237</a>
+                <p className="text-[18px]">info@southernedgemarketing.com</p>
               </div>
             </div>
 
@@ -219,9 +166,9 @@ export default function Contact() {
               <p className="text-[24px] lg:text-[28px] text-black/65 font-medium mb-6">
                 Contact Details
               </p>
-              <div className="flex flex-col gap-4 text-[24px] lg:text-[28px] text-black mb-16 font-normal">
-                <a href="tel:+919899238237" className="hover:text-[#ff5100] transition-colors">+91 9899238237</a>
-                <p>info@southernedgemarketing.com</p>
+              <div className="flex flex-col gap-4 text-black mb-16 font-normal">
+                <PhoneQrButton phoneNumber="+91 9899238237" className="text-[16px] lg:text-[18px] hover:text-[#ff5100] transition-colors" />
+                <p className="text-[16px] lg:text-[18px]">info@southernedgemarketing.com</p>
               </div>
 
               {/* Social Links */}
@@ -244,62 +191,7 @@ export default function Contact() {
                 START A PROJECT :
               </h2>
               
-              <form className="flex flex-col gap-4 lg:gap-6">
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Name*</label>
-                  <NameInput className="w-full bg-transparent outline-none text-[18px] text-black" />
-                </div>
-                
-                <div className="flex flex-row gap-6">
-                  <div className="flex flex-col gap-1 border-b border-black/20 pb-2 w-[120px] shrink-0">
-                    <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Code*</label>
-                    <input 
-                      list="country-codes-desktop" 
-                      className="bg-transparent outline-none text-[18px] text-black w-full cursor-pointer" 
-                      placeholder="+Code"
-                    />
-                    <datalist id="country-codes-desktop">
-                      {countryCodes.map((c, i) => (
-                        <option key={`d-${i}`} value={`${c.flag} ${c.code}`}>{c.country}</option>
-                      ))}
-                    </datalist>
-                  </div>
-                  
-                  <div className="flex flex-col gap-1 border-b border-black/20 pb-2 flex-1">
-                    <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Phone number*</label>
-                    <PhoneInput className="w-full bg-transparent outline-none text-[18px] text-black" />
-                  </div>
-                </div>
-                
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">E-mail*</label>
-                  <input type="email" className="w-full bg-transparent outline-none text-[18px] text-black" />
-                </div>
-                
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Service*</label>
-                  <select className="w-full bg-transparent outline-none text-[18px] text-black cursor-pointer appearance-none" defaultValue="">
-                    <option value="" disabled>Select a service</option>
-                    <option value="web-development">Website Development</option>
-                    <option value="ui-ux-design">UI/UX Design</option>
-                    <option value="branding">Branding</option>
-                    <option value="digital-marketing">Digital Marketing</option>
-                    <option value="seo">SEO</option>
-                    <option value="social-media">Social Media Management</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                
-                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
-                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
-                  <input type="text" className="w-full bg-transparent outline-none text-[18px] text-black" />
-                </div>
-
-                <button type="submit" className="w-full mt-4 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-4 flex items-center justify-center gap-[6px] shadow-[0_6px_20px_rgba(255,81,0,0.3)] hover:scale-[1.01] transition-transform active:scale-95">
-                  <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
-                  <span className="text-[20px] lg:text-[24px] font-medium text-white shadow-inner tracking-wide">Get in touch</span>
-                </button>
-              </form>
+              <DesktopContactForm />
 
               <p className="text-center text-[13px] lg:text-[14px] text-black/80 mt-6 tracking-wide">
                 By submitting this form, you agree to our <span className="font-semibold cursor-pointer hover:underline">Terms of Service</span> and <span className="font-semibold cursor-pointer hover:underline">Privacy Policy.</span>
