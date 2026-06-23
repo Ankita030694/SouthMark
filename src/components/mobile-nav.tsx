@@ -115,8 +115,7 @@ export function MobileNav() {
         </div>
       </div>
       
-      {/* Spacer to push page content down since the header is absolute */}
-      <div className="h-[76px] w-full pointer-events-none"></div>
+      {/* Spacer removed so hero section goes behind nav */}
     </div>
   );
 }

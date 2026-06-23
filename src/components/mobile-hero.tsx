@@ -1,10 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import ColorBends from "./ColorBends";
 
 export function MobileHero() {
   return (
-    <div className="w-full flex flex-col items-center pt-8 pb-12 relative overflow-hidden">
+    <div className="w-full flex flex-col items-center pt-[120px] pb-12 relative overflow-hidden">
+      {/* Background ColorBends */}
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <ColorBends
+          colors={["#e25309"]}
+          rotation={90}
+          speed={0.7}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={1}
+          noise={0.15}
+          parallax={0.5}
+          iterations={1}
+          intensity={1.5}
+          bandWidth={6}
+          transparent
+        />
+      </div>
+
       {/* Background blurred elements (as seen in the design code) */}
       <div className="absolute bg-[#ff5100]/20 blur-[60px] h-[200px] left-0 top-[60%] w-[100px] rounded-full pointer-events-none" />
       <div className="absolute bg-[#ff5100]/20 blur-[60px] h-[200px] right-0 top-[20%] w-[100px] rounded-full pointer-events-none" />

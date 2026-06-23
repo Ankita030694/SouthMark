@@ -23,7 +23,7 @@ export const DesktopNav = () => {
   ];
 
   return (
-    <div className="w-full px-6 md:px-10 py-4 flex flex-col gap-3 max-w-[1280px] mx-auto">
+    <div className="absolute top-0 left-0 right-0 z-50 w-full px-6 md:px-10 py-4 flex flex-col gap-3 max-w-[1280px] mx-auto">
       {/* Top Bar */}
       <div className="flex justify-end w-full px-2">
         <p className="text-[16px] md:text-[20px] text-black font-medium tracking-tight">

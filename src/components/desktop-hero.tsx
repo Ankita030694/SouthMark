@@ -2,10 +2,30 @@
 
 import React from "react";
 import Link from "next/link";
+import ColorBends from "./ColorBends";
 
 export const DesktopHero = () => {
   return (
-    <div className="w-full relative flex flex-col items-center pt-16 pb-8 overflow-hidden bg-[#fffff0]">
+    <div className="w-full relative flex flex-col items-center pt-[160px] pb-8 overflow-hidden bg-[#fffff0]">
+      {/* Background ColorBends */}
+      <div className="absolute inset-0 z-0 w-full h-full">
+        <ColorBends
+          colors={["#e25309"]}
+          rotation={90}
+          speed={0.7}
+          scale={1}
+          frequency={1}
+          warpStrength={1}
+          mouseInfluence={1}
+          noise={0.15}
+          parallax={0.5}
+          iterations={1}
+          intensity={1.5}
+          bandWidth={6}
+          transparent
+        />
+      </div>
+
       {/* Background blurred elements */}
       <div className="absolute bg-[#ff5100]/20 blur-[100px] h-[400px] left-[-100px] top-[30%] w-[400px] rounded-full pointer-events-none" />
       <div className="absolute bg-[#ff5100]/20 blur-[100px] h-[400px] right-[-100px] top-[10%] w-[400px] rounded-full pointer-events-none" />
