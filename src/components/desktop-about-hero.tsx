@@ -53,7 +53,7 @@ export const DesktopAboutHero = () => {
   };
 
   return (
-    <div className="w-full h-[828px] relative overflow-hidden bg-[#0f0901]">
+    <div className="w-full min-h-[828px] h-screen relative overflow-hidden bg-[#0f0901]">
       {/* Desktop Background Image */}
       <div className="absolute inset-0 hidden md:block">
         <img 
@@ -78,7 +78,7 @@ export const DesktopAboutHero = () => {
       </div>
 
       {/* Character Image Slider */}
-      <div className="absolute h-[350px] md:h-[609px] w-[120px] md:w-[213px] right-[5%] lg:right-[15%] top-[20px] md:top-[100px] z-10">
+      <div className="absolute h-[350px] md:h-[609px] w-[120px] md:w-[213px] right-[5%] lg:right-[15%] top-[100px] md:top-[180px] z-10">
         <AnimatePresence mode="wait">
           <motion.img 
             key={`img-${currentSlide}`}
@@ -97,7 +97,7 @@ export const DesktopAboutHero = () => {
       <div className="relative z-20 w-full max-w-[1568px] mx-auto h-full px-4 md:px-[80px]">
         
         {/* Timeline Top Slider */}
-        <div className="absolute top-[80px] left-4 md:left-[80px] hidden md:flex items-center">
+        <div className="absolute top-[160px] left-4 md:left-[80px] hidden md:flex items-center">
           <AnimatePresence mode="popLayout">
             <motion.span 
               key={`start-${currentSlide}`}
@@ -142,7 +142,7 @@ export const DesktopAboutHero = () => {
         </div>
 
         {/* Text Content Slider */}
-        <div className="absolute top-[380px] md:top-[380px] left-4 md:left-[80px] flex flex-col gap-[20px] md:gap-[30px] max-w-[1127px] w-[95%] md:w-[65%]">
+        <div className="absolute top-[460px] md:top-[460px] left-4 md:left-[80px] flex flex-col gap-[20px] md:gap-[30px] max-w-[1127px] w-[95%] md:w-[65%]">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${currentSlide}`}

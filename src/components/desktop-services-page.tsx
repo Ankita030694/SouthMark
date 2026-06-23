@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 export const DesktopServicesPage = () => {
   const services = [
@@ -100,9 +101,12 @@ export const DesktopServicesPage = () => {
                 </div>
 
                 <div className="flex justify-between items-center w-full mt-auto">
-                  <button className="bg-[#ff5100] text-white px-6 py-2.5 rounded-full font-medium text-[14px] xl:text-[16px] shadow-[inset_0px_-3px_13.8px_0px_rgba(232,232,232,0.76),inset_0px_4px_13.8px_0px_rgba(232,232,232,0.76)] hover:opacity-90 transition-opacity whitespace-nowrap">
-                    Start {service.title} Project
-                  </button>
+                  <Link href="/contact">
+                    <button className="bg-[#ff5100] text-white px-6 py-2.5 rounded-full font-medium text-[14px] xl:text-[16px] shadow-[inset_0px_-3px_13.8px_0px_rgba(232,232,232,0.76),inset_0px_4px_13.8px_0px_rgba(232,232,232,0.76)] flex items-center justify-center gap-[6px] hover:opacity-90 transition-opacity whitespace-nowrap">
+                      <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
+                      <span>Start {service.title} Project</span>
+                    </button>
+                  </Link>
                   <span className="text-[13px] xl:text-[14px] text-black/55 font-normal ml-6 whitespace-nowrap">
                     T&C Apply
                   </span>

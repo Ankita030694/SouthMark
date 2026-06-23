@@ -69,38 +69,38 @@ export const DesktopComparison = () => {
       <div className="w-full max-w-[1400px] mx-auto bg-white rounded-[20px] shadow-sm flex overflow-hidden border border-black/5 min-h-[500px]">
         
         {/* Left Side: Other Agencies */}
-        <div className="w-1/2 p-10 lg:p-14 xl:p-16 flex flex-col">
-          <h3 className="text-[32px] xl:text-[35px] font-medium text-black mb-6">
+        <div className={`w-1/2 p-10 lg:p-14 xl:p-16 flex flex-col transition-colors duration-300 ${!isOn ? 'bg-black text-white' : 'bg-transparent text-black'}`}>
+          <h3 className="text-[32px] xl:text-[35px] font-medium mb-6">
             Other Agencies
           </h3>
-          <div className="w-full h-px bg-black/10 mb-10"></div>
+          <div className={`w-full h-px mb-10 transition-colors duration-300 ${!isOn ? 'bg-white/20' : 'bg-black/10'}`}></div>
           
           <ul className="flex flex-col gap-6">
             {cons.map((item, idx) => (
               <li key={idx} className="flex items-center gap-4">
                 <CrossIcon />
-                <span className="text-[20px] xl:text-[25px] text-black font-normal">{item}</span>
+                <span className="text-[20px] xl:text-[25px] font-normal">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Right Side: Southern Marketing */}
-        <div className="w-1/2 relative flex flex-col bg-black overflow-hidden rounded-[15px] m-1 my-1 shadow-xl">
+        <div className={`w-1/2 relative flex flex-col overflow-hidden rounded-[15px] m-1 my-1 shadow-xl transition-colors duration-300 ${isOn ? 'bg-black text-white' : 'bg-white text-black'}`}>
           {/* Subtle Orange Glow inside black card */}
-          <div className={`absolute -bottom-[30%] -right-[10%] w-[80%] h-[80%] rounded-full mix-blend-screen filter blur-[120px] opacity-60 pointer-events-none transition-colors duration-300 ${isOn ? 'bg-[#ff5100]' : 'bg-gray-600'}`}></div>
+          <div className={`absolute -bottom-[30%] -right-[10%] w-[80%] h-[80%] rounded-full mix-blend-screen filter blur-[120px] opacity-60 pointer-events-none transition-all duration-300 ${isOn ? 'bg-[#ff5100]' : 'opacity-0'}`}></div>
           
           <div className="relative z-10 p-9 lg:p-13 xl:p-15 flex flex-col h-full">
-            <h3 className="text-[32px] xl:text-[35px] font-medium text-white mb-6">
+            <h3 className="text-[32px] xl:text-[35px] font-medium mb-6">
               Southern Marketing
             </h3>
-            <div className="w-full h-px bg-white/20 mb-10"></div>
+            <div className={`w-full h-px mb-10 transition-colors duration-300 ${isOn ? 'bg-white/20' : 'bg-black/10'}`}></div>
             
             <ul className="flex flex-col gap-6">
               {pros.map((item, idx) => (
                 <li key={idx} className="flex items-center gap-4">
                   <CheckIcon />
-                  <span className="text-[20px] xl:text-[25px] text-white font-normal">{item}</span>
+                  <span className="text-[20px] xl:text-[25px] font-normal">{item}</span>
                 </li>
               ))}
             </ul>

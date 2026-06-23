@@ -3,7 +3,9 @@ import { DesktopFaq } from "@/components/desktop-faq";
 import { DesktopFooter } from "@/components/desktop-footer";
 import { MobileNav } from "@/components/mobile-nav";
 import { MobileFooter } from "@/components/mobile-footer";
-import { Cta } from "@/components/cta";
+import { countryCodes } from "@/lib/countryCodes";
+import { NameInput } from "@/components/name-input";
+import { PhoneInput } from "@/components/phone-input";
 
 import { Metadata } from "next";
 
@@ -38,7 +40,7 @@ export default function Contact() {
         <MobileNav />
 
         {/* Mobile Contact Hero */}
-        <section className="w-full px-5 pt-12 pb-16 flex flex-col items-start relative z-10">
+        <section className="w-full px-5 pt-36 pb-16 flex flex-col items-start relative z-10">
           <div className="flex flex-col items-start mb-16 w-full">
             <p className="font-medium text-[20px] mb-6 tracking-wide">
               <span className="text-[#ff5100]">[</span>
@@ -54,34 +56,65 @@ export default function Contact() {
           </div>
 
           {/* Form Card */}
-          <div className="w-full bg-[#ffe5b4] rounded-[20px] p-6 pt-8 pb-10 mb-16 relative shadow-sm">
-            <h2 className="text-[25px] font-semibold text-black mb-10 tracking-tight">
+          <div className="w-full bg-[#ffe5b4] rounded-[20px] p-5 pt-6 pb-6 mb-12 relative shadow-sm">
+            <h2 className="text-[20px] font-semibold text-black mb-6 tracking-tight">
               START A PROJECT :
             </h2>
             
-            <form className="flex flex-col gap-10">
-              <div className="flex flex-col gap-2 border-b border-black/20 pb-3">
-                <label className="text-[22px] text-[#626262] font-medium tracking-tight">Name*</label>
-                <input type="text" className="w-full bg-transparent outline-none text-[20px] text-black" />
+            <form className="flex flex-col gap-5">
+              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Name*</label>
+                <NameInput className="w-full bg-transparent outline-none text-[16px] text-black" />
               </div>
               
-              <div className="flex flex-col gap-2 border-b border-black/20 pb-3">
-                <label className="text-[22px] text-[#626262] font-medium tracking-tight">Phone number*</label>
-                <input type="tel" className="w-full bg-transparent outline-none text-[20px] text-black" />
+              <div className="flex flex-row gap-4">
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2 w-[100px] shrink-0">
+                  <label className="text-[16px] text-[#626262] font-medium tracking-tight">Code*</label>
+                  <input 
+                    list="country-codes-mobile" 
+                    className="bg-transparent outline-none text-[16px] text-black w-full cursor-pointer" 
+                    placeholder="+Code"
+                  />
+                  <datalist id="country-codes-mobile">
+                    {countryCodes.map((c, i) => (
+                      <option key={`m-${i}`} value={`${c.flag} ${c.code}`}>{c.country}</option>
+                    ))}
+                  </datalist>
+                </div>
+                
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2 flex-1">
+                  <label className="text-[16px] text-[#626262] font-medium tracking-tight">Phone number*</label>
+                  <PhoneInput className="w-full bg-transparent outline-none text-[16px] text-black" />
+                </div>
               </div>
               
-              <div className="flex flex-col gap-2 border-b border-black/20 pb-3">
-                <label className="text-[22px] text-[#626262] font-medium tracking-tight">E-mail*</label>
-                <input type="email" className="w-full bg-transparent outline-none text-[20px] text-black" />
+              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                <label className="text-[16px] text-[#626262] font-medium tracking-tight">E-mail*</label>
+                <input type="email" className="w-full bg-transparent outline-none text-[16px] text-black" />
               </div>
               
-              <div className="flex flex-col gap-2 border-b border-black/20 pb-3">
-                <label className="text-[22px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
-                <input type="text" className="w-full bg-transparent outline-none text-[20px] text-black" />
+              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Service*</label>
+                <select className="w-full bg-transparent outline-none text-[16px] text-black cursor-pointer appearance-none" defaultValue="">
+                  <option value="" disabled>Select a service</option>
+                  <option value="web-development">Website Development</option>
+                  <option value="ui-ux-design">UI/UX Design</option>
+                  <option value="branding">Branding</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="seo">SEO</option>
+                  <option value="social-media">Social Media Management</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                <label className="text-[16px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
+                <input type="text" className="w-full bg-transparent outline-none text-[16px] text-black" />
               </div>
 
-              <button type="submit" className="w-full mt-4 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-4 flex items-center justify-center shadow-[0_4px_15px_rgba(255,81,0,0.3)] hover:scale-[1.02] transition-transform active:scale-95">
-                <span className="text-[26px] font-medium text-white shadow-inner tracking-wide">Get in touch</span>
+              <button type="submit" className="w-full mt-2 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-3 flex items-center justify-center gap-[6px] shadow-[0_4px_15px_rgba(255,81,0,0.3)] hover:scale-[1.02] transition-transform active:scale-95">
+                <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
+                <span className="text-[20px] font-medium text-white shadow-inner tracking-wide">Get in touch</span>
               </button>
             </form>
           </div>
@@ -154,7 +187,6 @@ export default function Contact() {
         </section>
         */}
 
-        <Cta />
         <MobileFooter />
       </div>
 
@@ -163,7 +195,7 @@ export default function Contact() {
         <DesktopNav />
 
         {/* Contact Us Hero Section */}
-        <section className="w-full px-8 lg:px-[90px] pt-24 pb-20 flex flex-col items-start relative z-10 max-w-[1500px] mx-auto">
+        <section className="w-full px-8 lg:px-[90px] pt-48 pb-20 flex flex-col items-start relative z-10 max-w-[1500px] mx-auto">
           <div className="flex flex-col items-start mb-24 w-full">
             <p className="font-medium text-[24px] mb-8 tracking-wide">
               <span className="text-[#ff5100]">[</span>
@@ -207,38 +239,69 @@ export default function Contact() {
             </div>
 
             {/* Right: Form Card */}
-            <div className="flex-1 bg-[#ffe5b4] rounded-[24px] p-10 lg:p-14 relative shadow-sm max-w-[850px]">
-              <h2 className="text-[36px] lg:text-[44px] font-semibold text-black mb-12 tracking-tight">
+            <div className="flex-1 bg-[#ffe5b4] rounded-[24px] p-8 lg:p-10 relative shadow-sm max-w-[850px]">
+              <h2 className="text-[28px] lg:text-[36px] font-semibold text-black mb-8 tracking-tight">
                 START A PROJECT :
               </h2>
               
-              <form className="flex flex-col gap-8">
-                <div className="flex flex-col gap-2 border-b border-black/20 pb-4">
-                  <label className="text-[20px] lg:text-[24px] text-[#626262] font-medium tracking-tight">Name*</label>
-                  <input type="text" className="w-full bg-transparent outline-none text-[20px] text-black" />
+              <form className="flex flex-col gap-4 lg:gap-6">
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Name*</label>
+                  <NameInput className="w-full bg-transparent outline-none text-[18px] text-black" />
                 </div>
                 
-                <div className="flex flex-col gap-2 border-b border-black/20 pb-4">
-                  <label className="text-[20px] lg:text-[24px] text-[#626262] font-medium tracking-tight">Phone number*</label>
-                  <input type="tel" className="w-full bg-transparent outline-none text-[20px] text-black" />
+                <div className="flex flex-row gap-6">
+                  <div className="flex flex-col gap-1 border-b border-black/20 pb-2 w-[120px] shrink-0">
+                    <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Code*</label>
+                    <input 
+                      list="country-codes-desktop" 
+                      className="bg-transparent outline-none text-[18px] text-black w-full cursor-pointer" 
+                      placeholder="+Code"
+                    />
+                    <datalist id="country-codes-desktop">
+                      {countryCodes.map((c, i) => (
+                        <option key={`d-${i}`} value={`${c.flag} ${c.code}`}>{c.country}</option>
+                      ))}
+                    </datalist>
+                  </div>
+                  
+                  <div className="flex flex-col gap-1 border-b border-black/20 pb-2 flex-1">
+                    <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Phone number*</label>
+                    <PhoneInput className="w-full bg-transparent outline-none text-[18px] text-black" />
+                  </div>
                 </div>
                 
-                <div className="flex flex-col gap-2 border-b border-black/20 pb-4">
-                  <label className="text-[20px] lg:text-[24px] text-[#626262] font-medium tracking-tight">E-mail*</label>
-                  <input type="email" className="w-full bg-transparent outline-none text-[20px] text-black" />
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">E-mail*</label>
+                  <input type="email" className="w-full bg-transparent outline-none text-[18px] text-black" />
                 </div>
                 
-                <div className="flex flex-col gap-2 border-b border-black/20 pb-4">
-                  <label className="text-[20px] lg:text-[24px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
-                  <input type="text" className="w-full bg-transparent outline-none text-[20px] text-black" />
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Service*</label>
+                  <select className="w-full bg-transparent outline-none text-[18px] text-black cursor-pointer appearance-none" defaultValue="">
+                    <option value="" disabled>Select a service</option>
+                    <option value="web-development">Website Development</option>
+                    <option value="ui-ux-design">UI/UX Design</option>
+                    <option value="branding">Branding</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="seo">SEO</option>
+                    <option value="social-media">Social Media Management</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div className="flex flex-col gap-1 border-b border-black/20 pb-2">
+                  <label className="text-[16px] lg:text-[18px] text-[#626262] font-medium tracking-tight">Tell us about your project*</label>
+                  <input type="text" className="w-full bg-transparent outline-none text-[18px] text-black" />
                 </div>
 
-                <button type="submit" className="w-full mt-6 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-5 flex items-center justify-center shadow-[0_6px_20px_rgba(255,81,0,0.3)] hover:scale-[1.01] transition-transform active:scale-95">
+                <button type="submit" className="w-full mt-4 bg-gradient-to-b from-[#ff5100] to-[#e64700] rounded-full py-4 flex items-center justify-center gap-[6px] shadow-[0_6px_20px_rgba(255,81,0,0.3)] hover:scale-[1.01] transition-transform active:scale-95">
+                  <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
                   <span className="text-[20px] lg:text-[24px] font-medium text-white shadow-inner tracking-wide">Get in touch</span>
                 </button>
               </form>
 
-              <p className="text-center text-[13px] lg:text-[14px] text-black/80 mt-8 tracking-wide">
+              <p className="text-center text-[13px] lg:text-[14px] text-black/80 mt-6 tracking-wide">
                 By submitting this form, you agree to our <span className="font-semibold cursor-pointer hover:underline">Terms of Service</span> and <span className="font-semibold cursor-pointer hover:underline">Privacy Policy.</span>
               </p>
             </div>
@@ -279,7 +342,6 @@ export default function Contact() {
         </section>
         */}
 
-        <Cta />
         <DesktopFaq />
         <DesktopFooter />
       </div>

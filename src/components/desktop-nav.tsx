@@ -67,9 +67,12 @@ export const DesktopNav = () => {
           href="/contact" 
           className="shrink-0 h-[54px] bg-white rounded-full flex items-center pl-5 pr-[4px] gap-3 group hover:scale-[1.02] transition-transform"
         >
-          <span className="text-black text-[22px] font-medium tracking-tight whitespace-nowrap pt-0.5">
-            Let's impress you
-          </span>
+          <div className="flex items-center gap-[6px]">
+            <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
+            <span className="text-black text-[22px] font-medium tracking-tight whitespace-nowrap pt-0.5">
+              Let's impress you
+            </span>
+          </div>
           <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center relative overflow-hidden group-hover:rotate-45 transition-transform duration-300 shadow-inner">
              <div className="absolute inset-0 bg-gradient-to-r from-[#ffa479] to-[#ff5100]" />
              <div className="relative z-10 text-white">

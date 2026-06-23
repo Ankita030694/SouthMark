@@ -60,7 +60,8 @@ export const DesktopCaseStudies = () => {
             aria-label="Explore Projects"
           >
             {/* Inner Left Pill */}
-            <div className="absolute left-0 top-0 w-[225px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center pl-[35px] transform group-hover:translate-x-[3px] transition-transform duration-300 z-10">
+            <div className="absolute left-0 top-0 w-[225px] h-[90px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center pl-[35px] gap-[6px] transform group-hover:translate-x-[3px] transition-transform duration-300 z-10">
+              <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
               <span className="font-medium text-[25px] text-white tracking-tight">
                 Explore Projects
               </span>

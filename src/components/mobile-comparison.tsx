@@ -4,13 +4,13 @@ import React, { useState } from "react";
 
 const XIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-    <path d="M1.5 1.5L16.5 16.5M1.5 16.5L16.5 1.5" stroke="#FF0000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M1.5 1.5L16.5 16.5M1.5 16.5L16.5 1.5" stroke="#FF0000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="transition-colors duration-300"/>
   </svg>
 );
 
 const CheckIcon = () => (
   <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-    <path d="M1.5 8L8 14.5L20.5 1.5" stroke="#00D200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M1.5 8L8 14.5L20.5 1.5" stroke="#00D200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-colors duration-300"/>
   </svg>
 );
 
@@ -53,71 +53,71 @@ export const MobileComparison = () => {
       <div className="rounded-[20px] overflow-hidden flex flex-col shadow-sm border border-gray-100/50">
         
         {/* Other Agencies Card */}
-        <div className="bg-white p-6 pt-7 pb-10">
-          <h3 className="text-[28px] font-medium text-black mb-4">Other Agencies</h3>
-          <div className="w-full h-[1px] bg-gray-300 mb-6"></div>
+        <div className={`p-6 pt-7 pb-10 transition-colors duration-300 ${!isOn ? 'bg-[#0F0F0F] text-white' : 'bg-white text-black'}`}>
+          <h3 className="text-[28px] font-medium mb-4">Other Agencies</h3>
+          <div className={`w-full h-[1px] mb-6 transition-colors duration-300 ${!isOn ? 'bg-white/30' : 'bg-gray-300'}`}></div>
           
           <ul className="flex flex-col gap-4">
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Slow delivery</span>
+              <span className="text-[18px] font-sans">Slow delivery</span>
             </li>
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Generic designs</span>
+              <span className="text-[18px] font-sans">Generic designs</span>
             </li>
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Hidden charges</span>
+              <span className="text-[18px] font-sans">Hidden charges</span>
             </li>
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Poor communication</span>
+              <span className="text-[18px] font-sans">Poor communication</span>
             </li>
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Temporary fixes</span>
+              <span className="text-[18px] font-sans">Temporary fixes</span>
             </li>
             <li className="flex items-center gap-4">
               <XIcon />
-              <span className="text-[18px] text-black font-sans">Basic support</span>
+              <span className="text-[18px] font-sans">Basic support</span>
             </li>
           </ul>
         </div>
 
         {/* Southern Marketing Card */}
-        <div className="relative p-6 pt-8 pb-10 bg-[#0F0F0F] rounded-t-[20px] -mt-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)]">
+        <div className={`relative p-6 pt-8 pb-10 rounded-t-[20px] -mt-4 shadow-[0_-4px_10px_rgba(0,0,0,0.1)] transition-colors duration-300 ${isOn ? 'bg-[#0F0F0F] text-white' : 'bg-white text-black'}`}>
           {/* Glow effect at bottom */}
-          <div className={`absolute -bottom-24 -right-24 w-[350px] h-[350px] opacity-[0.35] blur-[80px] rounded-full pointer-events-none transition-colors duration-300 ${isOn ? 'bg-[#ff5100]' : 'bg-gray-500'}`}></div>
+          <div className={`absolute -bottom-24 -right-24 w-[350px] h-[350px] blur-[80px] rounded-full pointer-events-none transition-all duration-300 ${isOn ? 'bg-[#ff5100] opacity-[0.35]' : 'opacity-0'}`}></div>
           
           <div className="relative z-10">
-            <h3 className="text-[28px] font-medium text-white mb-4">Southern Marketing</h3>
-            <div className="w-full h-[1px] bg-white/30 mb-6"></div>
+            <h3 className="text-[28px] font-medium mb-4">Southern Marketing</h3>
+            <div className={`w-full h-[1px] mb-6 transition-colors duration-300 ${isOn ? 'bg-white/30' : 'bg-gray-300'}`}></div>
             
             <ul className="flex flex-col gap-5">
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Fast turnaround</span>
+                <span className="text-[18px] font-sans">Fast turnaround</span>
               </li>
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Strategic design</span>
+                <span className="text-[18px] font-sans">Strategic design</span>
               </li>
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Clear pricing</span>
+                <span className="text-[18px] font-sans">Clear pricing</span>
               </li>
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Proactive updates</span>
+                <span className="text-[18px] font-sans">Proactive updates</span>
               </li>
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Scalable solutions</span>
+                <span className="text-[18px] font-sans">Scalable solutions</span>
               </li>
               <li className="flex items-center gap-4">
                 <CheckIcon />
-                <span className="text-[18px] text-white font-sans">Dedicated partnership</span>
+                <span className="text-[18px] font-sans">Dedicated partnership</span>
               </li>
             </ul>
           </div>
