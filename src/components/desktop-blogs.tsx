@@ -15,15 +15,11 @@ export const DesktopBlogs = () => {
       
       {/* Top Section: Title */}
       <div className="flex flex-col w-full mb-16 lg:mb-24 items-center relative pt-16 gap-8 md:gap-10">
-        <p className="font-medium text-[20px] lg:text-[30px] text-center w-full tracking-wide">
-          <span className="text-[#ff5100]">[</span>
-          <span className="text-black mx-2">LATEST UPDATES</span>
-          <span className="text-[#ff5100]">]</span>
-        </p>
+
         
         <div className="w-full h-px bg-black/10 relative" />
         
-        <h2 className="text-[50px] md:text-[80px] lg:text-[130px] font-semibold text-black text-center w-full leading-[1.1] lg:leading-[130px] tracking-tight px-4">
+        <h2 className="text-[50px] md:text-[80px] lg:text-[130px] font-semibold text-black text-center w-full leading-[1.1] lg:leading-[130px] tracking-tight px-4 mt-12 lg:mt-16">
           BLOGS & ARTICLES
         </h2>
       </div>

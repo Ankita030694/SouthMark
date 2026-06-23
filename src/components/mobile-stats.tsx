@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { CountUp } from "@/components/count-up";
 
 export function MobileStats() {
   return (
@@ -14,7 +15,7 @@ export function MobileStats() {
             Delivered
           </h2>
           <div className="flex flex-col items-end text-right mt-1">
-            <span className="text-[22px] font-semibold text-[#30261C] font-sans">400+</span>
+            <span className="text-[22px] font-semibold text-[#30261C] font-sans"><CountUp to={400} suffix="+" /></span>
             <span className="text-[14px] text-[#30261C]/75 font-sans mt-0.5">Projects Delivered</span>
           </div>
         </div>
@@ -22,17 +23,17 @@ export function MobileStats() {
         {/* Bottom Row */}
         <div className="flex justify-between items-start">
           <div className="flex flex-col items-end text-right w-1/3 pr-2">
-            <span className="text-[20px] font-semibold text-[#30261C] font-sans">95%</span>
+            <span className="text-[20px] font-semibold text-[#30261C] font-sans"><CountUp to={95} suffix="%" /></span>
             <span className="text-[12px] leading-tight text-[#30261C]/75 font-sans mt-0.5">Client Retention</span>
           </div>
           
           <div className="flex flex-col items-end text-right w-1/3 px-2">
-            <span className="text-[20px] font-semibold text-[#30261C] font-sans">20+</span>
+            <span className="text-[20px] font-semibold text-[#30261C] font-sans"><CountUp to={20} suffix="+" /></span>
             <span className="text-[12px] leading-tight text-[#30261C]/75 font-sans mt-0.5">Specialists</span>
           </div>
           
           <div className="flex flex-col items-end text-right w-1/3 pl-2">
-            <span className="text-[20px] font-semibold text-[#30261C] font-sans">6+</span>
+            <span className="text-[20px] font-semibold text-[#30261C] font-sans"><CountUp to={6} suffix="+" /></span>
             <span className="text-[12px] leading-tight text-[#30261C]/75 font-sans mt-0.5">Years Experience</span>
           </div>
         </div>

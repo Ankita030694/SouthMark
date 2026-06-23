@@ -32,94 +32,66 @@ const ChartIcon = () => (
 );
 
 export const MobileServices = () => {
+  const services = [
+    {
+      title: "Custom Code",
+      description: "Custom websites and mobile applications built for speed, scalability, and seamless experiences that support business growth.",
+      icon: <CodeIcon />
+    },
+    {
+      title: "UI/UX Design",
+      description: "Intuitive and user-focused designs that enhance engagement, improve usability, and create memorable digital experiences.",
+      icon: <DesignIcon />
+    },
+    {
+      title: "Digital Marketing",
+      description: "Data-driven marketing strategies designed to increase visibility, attract customers, and generate measurable business results.",
+      icon: <MegaphoneIcon />
+    },
+    {
+      title: "SEO Optimization",
+      description: "Strategic SEO solutions that improve search rankings, drive organic traffic, and help businesses grow sustainably online.",
+      icon: <ChartIcon />
+    }
+  ];
+
   return (
     <div className="w-full relative bg-[#fffff0] pt-16 pb-16 overflow-hidden">
-      {/* Orange Bars Graphic */}
-      <div className="absolute left-0 top-0 flex gap-2 h-[240px]">
-        <div className="w-[24px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-        <div className="w-[32px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-        <div className="w-[40px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-        <div className="w-[48px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]"></div>
-      </div>
-
       <div className="px-5 relative z-10">
-        {/* Header Section */}
-        <div className="flex flex-col items-end text-right mb-16">
-          <p className="text-[18px] font-medium tracking-wide mb-3">
-            <span className="text-[#ff5100]">[</span>
-            <span className="text-black mx-1">SERVICE</span>
-            <span className="text-[#ff5100]">]</span>
-          </p>
-          <h2 className="text-[50px] leading-[1.05] font-semibold text-black mb-6 flex flex-col items-end">
-            <span>WHAT WE</span>
-            <span>DO BEST</span>
+        {/* New Compact Services Header (Inspired by Services Page) */}
+        <div className="flex flex-col items-center mb-12 gap-6 w-full z-10 relative mt-4">
+          <div className="w-[150vw] -ml-[25vw] h-px bg-black/10 relative" />
+          
+          <h2 className="text-[40px] leading-[1.1] font-semibold text-black text-center w-full px-4 mt-10">
+            SERVICES & EXPERTISE
           </h2>
-          <p className="text-[20px] leading-[1.4] text-black/70 max-w-[95%]">
-            From web development and branding to SEO and marketing, we create digital solutions designed to drive measurable growth.
-          </p>
         </div>
 
-        {/* Services List */}
-        <div className="flex flex-col gap-8">
-          
-          {/* Custom Code */}
-          <div className="flex gap-5 items-start">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[#ff5100] rounded-full flex items-center justify-center shadow-md">
-              <CodeIcon />
-            </div>
-            <div className="flex flex-col gap-2 pt-1">
-              <h3 className="text-[26px] font-semibold text-black uppercase tracking-tight leading-none">Custom Code</h3>
-              <p className="text-[16px] leading-[1.4] text-black/70 font-sans mt-1">
-                Custom websites and mobile applications built for speed, scalability, and seamless experiences that support business growth.
-              </p>
-            </div>
-          </div>
-          
-          <div className="w-full h-px bg-[#ff5100]/20"></div>
+        {/* Services Grid */}
+        <div className="w-full grid grid-cols-1 gap-5 relative z-10">
+          {services.map((service, index) => (
+            <div 
+              key={index} 
+              className="flex flex-col bg-white rounded-[24px] p-6 sm:p-8 border border-black/5 shadow-sm relative overflow-hidden active:scale-[0.98] transition-transform duration-300"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ff5100]/[0.02] to-transparent pointer-events-none" />
 
-          {/* UI/UX Design */}
-          <div className="flex gap-5 items-start">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[#ff5100] rounded-full flex items-center justify-center shadow-md">
-              <DesignIcon />
+              <div className="w-[60px] h-[60px] shrink-0 bg-[#ff5100] rounded-[18px] flex items-center justify-center mb-6 shadow-[0_4px_15px_rgba(255,81,0,0.25)] relative z-10">
+                <div className="scale-75">
+                  {service.icon}
+                </div>
+              </div>
+              
+              <div className="flex flex-col relative z-10">
+                <h3 className="text-[24px] sm:text-[26px] font-semibold text-black leading-tight mb-3 tracking-tight">
+                  {service.title}
+                </h3>
+                <p className="text-[15px] sm:text-[16px] text-black/65 leading-[1.5] font-normal">
+                  {service.description}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col gap-2 pt-1">
-              <h3 className="text-[26px] font-semibold text-black uppercase tracking-tight leading-none">UI/UX Design</h3>
-              <p className="text-[16px] leading-[1.4] text-black/70 font-sans mt-1">
-                Intuitive and user-focused designs that enhance engagement, improve usability, and create memorable digital experiences.
-              </p>
-            </div>
-          </div>
-          
-          <div className="w-full h-px bg-[#ff5100]/20"></div>
-
-          {/* Digital Marketing */}
-          <div className="flex gap-5 items-start">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[#ff5100] rounded-full flex items-center justify-center shadow-md">
-              <MegaphoneIcon />
-            </div>
-            <div className="flex flex-col gap-2 pt-1">
-              <h3 className="text-[26px] font-semibold text-black uppercase tracking-tight leading-none">Digital Marketing</h3>
-              <p className="text-[16px] leading-[1.4] text-black/70 font-sans mt-1">
-                Data-driven marketing strategies designed to increase visibility, attract customers, and generate measurable business results.
-              </p>
-            </div>
-          </div>
-
-          <div className="w-full h-px bg-[#ff5100]/20"></div>
-
-          {/* SEO Optimization */}
-          <div className="flex gap-5 items-start">
-            <div className="w-[64px] h-[64px] shrink-0 bg-[#ff5100] rounded-full flex items-center justify-center shadow-md">
-              <ChartIcon />
-            </div>
-            <div className="flex flex-col gap-2 pt-1">
-              <h3 className="text-[26px] font-semibold text-black uppercase tracking-tight leading-none">SEO Optimization</h3>
-              <p className="text-[16px] leading-[1.4] text-black/70 font-sans mt-1">
-                Strategic SEO solutions that improve search rankings, drive organic traffic, and help businesses grow sustainably online.
-              </p>
-            </div>
-          </div>
-          
+          ))}
         </div>
       </div>
     </div>

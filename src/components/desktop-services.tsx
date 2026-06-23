@@ -60,10 +60,19 @@ export const DesktopServices = () => {
   return (
     <section className="w-full bg-[#fffff0] pb-20 pt-0 px-8 lg:px-[90px] flex flex-col relative z-10 overflow-hidden">
       
-      {/* Top Section: Graphic & Title */}
+      {/* New Compact Services Header (Inspired by Services Page) */}
+      <div className="flex flex-col w-full mb-16 lg:mb-24 items-center relative pt-16 gap-8 md:gap-10 z-10">
+        <div className="w-full h-px bg-black/10 relative" />
+        
+        <h2 className="text-[50px] md:text-[80px] lg:text-[130px] font-semibold text-black text-center w-full leading-[1.1] lg:leading-[130px] tracking-tight px-4 mt-12 lg:mt-16">
+          SERVICES & EXPERTISE
+        </h2>
+      </div>
+
+      {/* Old Top Section: Graphic & Title (Commented out as requested) */}
+      {/*
       <div className="flex w-full mb-24 items-start relative pt-16">
         
-        {/* Left Side: Abstract Stripe Graphic (Absolute to touch the top edge of the section) */}
         <div className="absolute top-0 left-0 w-[45%] lg:w-[40%] flex h-[350px] gap-4 lg:gap-6">
           <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
           <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
@@ -71,7 +80,6 @@ export const DesktopServices = () => {
           <div className="w-[48px] lg:w-[64px] h-full bg-gradient-to-b from-[#ff5100] to-[#fffff0]" />
         </div>
 
-        {/* Right Side: Title Area (Offset to make room for absolute stripes) */}
         <div className="w-full ml-[50%] lg:ml-[45%] pl-8 xl:pl-16 flex flex-col items-start max-w-[700px] z-10">
           <p className="font-medium text-[19px] lg:text-[24px] mb-5 tracking-wide">
             <span className="text-[#ff5100]">[</span>
@@ -88,36 +96,47 @@ export const DesktopServices = () => {
           </p>
         </div>
       </div>
+      */}
 
-      {/* Bottom Section: Services List */}
-      <div className="w-full flex flex-col relative z-10">
-        {services.map((service, index) => (
-          <div key={index} className="flex flex-col">
-            {/* Divider Line (not on the first item) */}
-            {index !== 0 && (
-              <div className="w-full h-px bg-gradient-to-r from-transparent via-[#ff5100]/20 to-transparent my-8 lg:my-10" />
-            )}
-            
-            <div className="flex flex-col md:flex-row items-start md:items-center w-full gap-6 lg:gap-12">
-              {/* Icon */}
-              <div className="w-[72px] h-[72px] lg:w-[90px] lg:h-[90px] shrink-0 bg-[#ff5100] rounded-[24px] lg:rounded-[32px] flex items-center justify-center shadow-[0_6px_20px_rgba(255,81,0,0.4)]">
-                <div className="scale-75 lg:scale-90">
+      {/* Bottom Section: Services Bento Grid */}
+      <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10 max-w-[1280px] mx-auto">
+        {services.map((service, index) => {
+          const isLong = index === 0 || index === 3;
+          
+          return (
+            <div 
+              key={index} 
+              className={`flex ${isLong ? 'lg:col-span-2 flex-col md:flex-row md:items-center lg:gap-12' : 'lg:col-span-1 flex-col'} bg-white rounded-[32px] p-8 lg:p-12 border border-black/5 shadow-sm hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group overflow-hidden relative`}
+            >
+              {/* Subtle background gradient on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ff5100]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div className={`w-[80px] h-[80px] shrink-0 bg-[#ff5100] rounded-[24px] flex items-center justify-center shadow-[0_4px_20px_rgba(255,81,0,0.3)] group-hover:scale-105 group-hover:-rotate-3 transition-transform duration-500 relative z-10 ${isLong ? 'mb-8 md:mb-0 md:mr-4' : 'mb-8'}`}>
+                <div className="scale-90">
                   {service.icon}
                 </div>
               </div>
               
-              {/* Text */}
-              <div className="flex flex-col max-w-[1000px]">
-                <h3 className="text-[32px] lg:text-[56px] xl:text-[76px] font-semibold text-black leading-none mb-3 tracking-tight">
+              <div className="flex flex-col relative z-10 flex-1">
+                <h3 className={`font-semibold text-black leading-tight tracking-tight group-hover:text-[#ff5100] transition-colors duration-300 ${isLong ? 'text-[32px] lg:text-[40px] mb-4' : 'text-[28px] lg:text-[32px] mb-4'}`}>
                   {service.title}
                 </h3>
-                <p className="text-[16px] lg:text-[24px] xl:text-[36px] text-black/65 leading-[1.2] font-normal">
+                <p className={`text-black/65 leading-[1.6] font-normal ${isLong ? 'text-[16px] lg:text-[18px] max-w-[600px]' : 'text-[15px] lg:text-[16px]'}`}>
                   {service.description}
                 </p>
               </div>
+              
+              {/* Decorative corner icon for long bentos */}
+              {isLong && (
+                <div className="hidden lg:flex absolute top-8 right-8 w-12 h-12 rounded-full border border-black/5 items-center justify-center group-hover:bg-[#ff5100] group-hover:border-[#ff5100] transition-colors duration-300">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="stroke-black/30 group-hover:stroke-white transition-colors duration-300">
+                    <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
     </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { CountUp } from "@/components/count-up";
 
 export const DesktopStats = () => {
   const stats = [
@@ -28,7 +29,13 @@ export const DesktopStats = () => {
             {stats.map((stat, idx) => (
               <div key={idx} className="flex flex-col items-start gap-1 min-w-[140px] xl:min-w-[180px]">
                 <p className="text-[36px] lg:text-[42px] xl:text-[46px] font-semibold text-[#30261c] leading-none">
-                  {stat.value}
+                  {typeof stat.value === 'string' && stat.value.includes('+') ? (
+                    <CountUp to={parseInt(stat.value)} suffix="+" />
+                  ) : typeof stat.value === 'string' && stat.value.includes('%') ? (
+                    <CountUp to={parseInt(stat.value)} suffix="%" />
+                  ) : (
+                    stat.value
+                  )}
                 </p>
                 <p className="text-[16px] lg:text-[18px] xl:text-[22px] text-[#30261c]/70 font-light whitespace-nowrap mt-2">
                   {stat.label}

@@ -24,12 +24,7 @@ export const DesktopNav = () => {
 
   return (
     <div className="absolute top-0 left-0 right-0 z-50 w-full px-6 md:px-10 py-4 flex flex-col gap-3 max-w-[1280px] mx-auto">
-      {/* Top Bar */}
-      <div className="flex justify-end w-full px-2">
-        <p className="text-[16px] md:text-[20px] text-black font-medium tracking-tight flex items-center gap-1">
-          Say Hello- <a href="tel:+919899238237" className="font-semibold hover:text-[#ff5100] transition-colors">+91 9899238237</a>
-        </p>
-      </div>
+
 
       {/* Main Navbar */}
       <nav className="w-full h-[76px] bg-[#ff5100] rounded-full flex items-center justify-between px-6 relative overflow-hidden shadow-sm">

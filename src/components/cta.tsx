@@ -6,7 +6,7 @@ export const Cta = () => {
     <div className="w-full px-4 md:px-[60px] py-10 md:py-20 flex justify-center bg-[#fffff0]">
       <div className="relative w-full max-w-[1568px]">
         {/* Outer wrapper that provides the 20px padding and gray border/inset shadow effect */}
-        <div className="w-full h-full relative rounded-[25px] md:rounded-[45px] p-[10px] md:p-[20px]">
+        <div className="w-full h-full relative rounded-[25px] md:rounded-[45px] p-[10px] md:p-[20px] shadow-[0px_15px_60px_-15px_rgba(0,0,0,0.1)]">
           
           <div aria-hidden className="absolute inset-0 pointer-events-none rounded-[25px] md:rounded-[45px] bg-[rgba(243,243,243,0.65)]" />
           <div className="absolute inset-0 pointer-events-none rounded-[25px] md:rounded-[45px] shadow-[inset_0px_0px_8.1px_0px_rgba(0,0,0,0.35)]" />

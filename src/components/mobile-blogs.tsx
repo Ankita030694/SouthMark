@@ -14,15 +14,11 @@ export const MobileBlogs = () => {
     <div className="w-full relative bg-[#fffff0] pt-16 pb-16 overflow-hidden">
       {/* Header Section */}
       <div className="flex flex-col items-center mb-12 gap-6 w-full z-10 relative mt-4">
-        <p className="text-[18px] font-medium tracking-wide">
-          <span className="text-[#ff5100]">[</span>
-          <span className="text-black mx-1">LATEST UPDATES</span>
-          <span className="text-[#ff5100]">]</span>
-        </p>
+
         
         <div className="w-[150vw] -ml-[25vw] h-px bg-black/10 relative" />
         
-        <h2 className="text-[40px] leading-[1.1] font-semibold text-black text-center w-full px-4">
+        <h2 className="text-[40px] leading-[1.1] font-semibold text-black text-center w-full px-4 mt-10">
           BLOGS & ARTICLES
         </h2>
       </div>
