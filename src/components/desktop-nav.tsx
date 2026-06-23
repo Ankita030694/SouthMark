@@ -27,25 +27,25 @@ export const DesktopNav = () => {
 
 
       {/* Main Navbar */}
-      <nav className="w-full h-[76px] bg-[#ff5100] rounded-full flex items-center justify-between px-6 relative overflow-hidden shadow-sm">
+      <nav className="w-full h-[68px] bg-[#ff5100] rounded-full flex items-center justify-between px-6 relative overflow-hidden shadow-sm">
         {/* Logo */}
         <div className="flex items-center shrink-0">
           <Link href="/">
-            <div className="h-10 w-10 rounded-full border-2 border-white bg-white/20 flex items-center justify-center cursor-pointer">
+            <div className="h-9 w-9 rounded-full border-2 border-white bg-white/20 flex items-center justify-center cursor-pointer">
               <span className="text-white text-xs font-bold">SM</span>
             </div>
           </Link>
         </div>
 
         {/* Links */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-[32px]">
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-[28px]">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link 
                 key={link.name}
                 href={link.href} 
-                className={`text-[20px] transition-all whitespace-nowrap ${
+                className={`text-[18px] transition-all whitespace-nowrap ${
                   isActive 
                     ? "text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.8)]" 
                     : "text-white/65 hover:text-white"
@@ -60,15 +60,15 @@ export const DesktopNav = () => {
         {/* CTA Button */}
         <Link 
           href="/contact" 
-          className="shrink-0 h-[54px] bg-white rounded-full flex items-center pl-5 pr-[4px] gap-3 group hover:scale-[1.02] transition-transform"
+          className="shrink-0 h-[48px] bg-white rounded-full flex items-center pl-5 pr-[4px] gap-3 group hover:scale-[1.02] transition-transform"
         >
           <div className="flex items-center gap-[6px]">
             <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
-            <span className="text-black text-[22px] font-medium tracking-tight whitespace-nowrap pt-0.5">
+            <span className="text-black text-[20px] font-medium tracking-tight whitespace-nowrap pt-0.5">
               Let's impress you
             </span>
           </div>
-          <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center relative overflow-hidden group-hover:rotate-45 transition-transform duration-300 shadow-inner">
+          <div className="w-[40px] h-[40px] rounded-full flex items-center justify-center relative overflow-hidden group-hover:rotate-45 transition-transform duration-300 shadow-inner">
              <div className="absolute inset-0 bg-gradient-to-r from-[#ffa479] to-[#ff5100]" />
              <div className="relative z-10 text-white">
                <ArrowRightIcon />

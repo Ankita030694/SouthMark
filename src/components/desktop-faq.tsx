@@ -45,7 +45,7 @@ export const DesktopFaq = () => {
   };
 
   return (
-    <section className="w-full bg-[#fffff0] pt-24 pb-10 px-8 lg:px-[90px] flex flex-col items-center relative z-10">
+    <section className="w-full bg-[#fffff0] pt-24 pb-10 px-8 lg:px-[90px] flex flex-col items-center relative z-10" style={{ zoom: 0.75 }}>
       
       {/* Top Header */}
       <div className="flex flex-col items-center mb-16 w-full">
@@ -90,11 +90,13 @@ export const DesktopFaq = () => {
               
               {/* Expandable Answer */}
               <div 
-                className={`overflow-hidden transition-all duration-300 px-6 lg:px-10 ${isOpen ? 'max-h-[200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
+                className={`overflow-hidden transition-all duration-300 px-6 lg:px-10 ${isOpen ? 'max-h-[300px] opacity-100 mt-4' : 'max-h-0 opacity-0'}`}
               >
-                <p className="text-[18px] lg:text-[20px] text-black/65 font-normal leading-[1.5]">
-                  {faq.answer}
-                </p>
+                <div className="bg-[#ff5100] rounded-[20px] p-6 mb-6">
+                  <p className="text-[18px] lg:text-[20px] text-white font-normal leading-[1.5]">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
             </div>
           );

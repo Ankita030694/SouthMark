@@ -21,9 +21,9 @@ export function MobileNav() {
   return (
     <div className="w-full relative z-50">
       {/* Base Navbar (Always visible at the bottom layer) */}
-      <div className="h-[76px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-40 bg-[rgba(255,255,240,0.1)]">
+      <div className="h-[68px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-40 bg-[rgba(255,255,240,0.1)]">
         {/* Logo Placeholder */}
-        <div className="h-10 w-10 rounded-full border-2 border-[#ff5100] bg-white/10 flex items-center justify-center">
+        <div className="h-9 w-9 rounded-full border-2 border-[#ff5100] bg-white/10 flex items-center justify-center">
           <span className="text-[#ff5100] text-xs font-bold">SM</span>
         </div>
         
@@ -33,11 +33,11 @@ export function MobileNav() {
           onClick={() => setIsOpen(true)}
           aria-label="Open Menu"
         >
-          <p className="font-bold text-[17px] tracking-widest text-[#ff5100] pointer-events-none">
+          <p className="font-bold text-[15px] tracking-widest text-[#ff5100] pointer-events-none">
             MENU
           </p>
           {/* Burger Icon */}
-          <div className="flex flex-col gap-[5px] w-9 pointer-events-none">
+          <div className="flex flex-col gap-[4px] w-8 pointer-events-none">
             <div className="h-[2px] w-full bg-[#ff5100]" />
             <div className="h-[2px] w-3/4 self-end bg-[#ff5100] transition-all group-hover:w-full" />
           </div>
@@ -49,13 +49,13 @@ export function MobileNav() {
         className={`absolute top-0 left-0 w-full bg-[#ff5100] z-[60] overflow-hidden rounded-b-[40px] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           isOpen ? "shadow-2xl pointer-events-auto" : "pointer-events-none"
         }`}
-        style={{ height: isOpen ? '475px' : '0px' }}
+        style={{ height: isOpen ? '425px' : '0px' }}
       >
         {/* Inner Content - Fixed height prevents squishing during height transition */}
-        <div className="w-full relative" style={{ height: '475px' }}>
+        <div className="w-full relative" style={{ height: '425px' }}>
           {/* White Header (perfectly overlays the base header) */}
-          <div className="h-[76px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-50">
-            <div className="h-10 w-10 rounded-full border-2 border-white bg-white/20 flex items-center justify-center">
+          <div className="h-[68px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-50">
+            <div className="h-9 w-9 rounded-full border-2 border-white bg-white/20 flex items-center justify-center">
               <span className="text-white text-xs font-bold">SM</span>
             </div>
             
@@ -65,11 +65,11 @@ export function MobileNav() {
               onClick={() => setIsOpen(false)}
               aria-label="Close Menu"
             >
-              <p className="font-bold text-[17px] tracking-widest text-white pointer-events-none">
+              <p className="font-bold text-[15px] tracking-widest text-white pointer-events-none">
                 MENU
               </p>
               {/* White Burger Icon */}
-              <div className="flex flex-col gap-[5px] w-9 pointer-events-none">
+              <div className="flex flex-col gap-[4px] w-8 pointer-events-none">
                 <div className="h-[2px] w-full bg-white" />
                 <div className="h-[2px] w-full bg-white transition-all" />
               </div>
@@ -103,10 +103,10 @@ export function MobileNav() {
               <a href="tel:+919899238237" className="leading-tight text-2xl hover:opacity-85 transition-opacity">+91 9899238237</a>
             </div>
             <div className="flex gap-2.5 items-center">
-              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
+              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#E1306C] hover:bg-white/90 transition-colors">
                 <FontAwesomeIcon icon={faInstagram} className="text-lg" />
               </a>
-              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#ff5100] hover:bg-white/90 transition-colors">
+              <a href="/contact" className="flex items-center justify-center rounded-full size-10 bg-white text-[#0A66C2] hover:bg-white/90 transition-colors">
                 <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
               </a>
             </div>

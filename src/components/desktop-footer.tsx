@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const DesktopFooter = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] pt-10 pb-6 px-8 lg:px-[90px] relative z-10 overflow-hidden flex flex-col">
+    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] pt-10 pb-6 px-8 lg:px-[90px] relative z-10 overflow-hidden flex flex-col" style={{ zoom: 0.8 }}>
       
       {/* Top Row: Logo & Contact */}
       <div className="flex w-full justify-between items-start mb-10">

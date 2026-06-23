@@ -36,29 +36,29 @@ const XIcon = () => (
 
 export default function Contact() {
   return (
-    <>
+    <div style={{ zoom: 0.8 }}>
       {/* Mobile Version */}
       <div className="md:hidden w-full bg-[#fffff0]">
         <MobileNav />
 
         {/* Mobile Contact Hero */}
-        <section className="w-full px-5 pt-36 pb-16 flex flex-col items-start relative z-10">
-          <div className="flex flex-col items-start mb-16 w-full">
-            <p className="font-medium text-[20px] mb-6 tracking-wide">
+        <section className="w-full px-5 pt-28 pb-8 flex flex-col items-start relative z-10">
+          <div className="flex flex-col items-start mb-8 w-full">
+            <p className="font-medium text-[20px] mb-4 tracking-wide">
               <span className="text-[#ff5100]">[</span>
               <span className="text-black mx-2 uppercase tracking-[-0.6px]">Let's Connect</span>
               <span className="text-[#ff5100]">]</span>
             </p>
             
-            <div className="w-full h-px bg-black/10 mb-6" />
+            <div className="w-full h-px bg-black/10 mb-4" />
             
-            <h1 className="text-[55px] font-semibold text-black leading-[55px] tracking-tight">
+            <h1 className="text-[50px] font-semibold text-black leading-[50px] tracking-tight">
               CONTACT US
             </h1>
           </div>
 
           {/* Form Card */}
-          <div className="w-full bg-[#ffe5b4] rounded-[20px] p-5 pt-6 pb-6 mb-12 relative shadow-sm">
+          <div className="w-full bg-[#ffe5b4] rounded-[20px] p-5 pt-6 pb-6 mb-8 relative shadow-sm">
             <h2 className="text-[20px] font-semibold text-black mb-6 tracking-tight">
               START A PROJECT :
             </h2>
@@ -142,24 +142,24 @@ export default function Contact() {
         <DesktopNav />
 
         {/* Contact Us Hero Section */}
-        <section className="w-full px-8 lg:px-[90px] pt-48 pb-20 flex flex-col items-start relative z-10 max-w-[1500px] mx-auto">
-          <div className="flex flex-col items-start mb-24 w-full">
-            <p className="font-medium text-[24px] mb-8 tracking-wide">
+        <section className="w-full px-8 lg:px-[90px] pt-32 pb-10 flex flex-col items-start relative z-10 max-w-8xl mx-auto min-h-[calc(100vh-100px)]">
+          <div className="flex flex-col items-start mb-12 w-full">
+            <p className="font-medium text-[24px] mb-6 tracking-wide">
               <span className="text-[#ff5100]">[</span>
               <span className="text-black mx-2 uppercase">Let's Connect</span>
               <span className="text-[#ff5100]">]</span>
             </p>
             
             {/* Subtle divider line */}
-            <div className="w-full h-px bg-black/10 mb-8" />
+            <div className="w-full h-px bg-black/10 mb-6" />
             
-            <h1 className="text-[80px] lg:text-[104px] font-semibold text-black leading-none tracking-tight">
+            <h1 className="text-[80px] lg:text-[90px] font-semibold text-black leading-none tracking-tight">
               CONTACT US
             </h1>
           </div>
 
           {/* Form and Contact Details Split */}
-          <div className="flex w-full justify-between gap-12 lg:gap-24 mb-32">
+          <div className="flex w-full justify-between gap-12 lg:gap-24 mb-16">
             
             {/* Left: Contact Details */}
             <div className="flex flex-col w-[350px] shrink-0 mt-8">
@@ -237,6 +237,6 @@ export default function Contact() {
         <DesktopFaq />
         <DesktopFooter />
       </div>
-    </>
+    </div>
   );
 }

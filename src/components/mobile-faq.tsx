@@ -33,11 +33,13 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
         </div>
       </button>
       <div 
-        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[200px] opacity-100 pb-2' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[300px] opacity-100 pb-2 mt-2' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-black/70 text-[16px] leading-relaxed pr-8">
-          {answer}
-        </p>
+        <div className="bg-[#ff5100] rounded-[16px] p-5 mb-2">
+          <p className="text-white text-[16px] leading-relaxed">
+            {answer}
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -60,7 +62,7 @@ export const MobileFaq = () => {
   ];
 
   return (
-    <div className="w-full bg-[#fffff0] px-5 pt-16 pb-6 relative flex flex-col items-center">
+    <div className="w-full bg-[#fffff0] px-5 pt-16 pb-6 relative flex flex-col items-center" style={{ zoom: 1.08 }}>
       
       {/* Header */}
       <p className="text-[18px] font-medium tracking-wide mb-4 text-center">

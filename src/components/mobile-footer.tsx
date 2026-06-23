@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const MobileFooter = () => {
   return (
-    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] px-5 pt-5 pb-4 flex flex-col relative overflow-hidden">
+    <footer className="w-full bg-gradient-to-b from-[#fffff0] to-[#ff5100] px-5 pt-5 pb-4 flex flex-col relative overflow-hidden" style={{ zoom: 0.8 }}>
       
       {/* Brand & Intro */}
       <div className="flex flex-col gap-3 mb-6">
@@ -30,35 +30,30 @@ export const MobileFooter = () => {
 
 
 
-      {/* Legal */}
-      <div className="flex flex-col mb-6 pl-1">
-        <p className="text-[16px] text-black/65 mb-4 font-sans">Legal</p>
-        <nav className="flex flex-col gap-3">
-          <Link href="/terms" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
-            Terms & Conditions
-          </Link>
-          <Link href="/privacy" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
-            Privacy Policy
-          </Link>
-        </nav>
-      </div>
-
       {/* Social */}
-      <div className="flex flex-col mb-6 pl-1">
-        <p className="text-[16px] text-black/65 mb-4 font-sans">Social</p>
-        <nav className="flex flex-col gap-3">
+      <div className="flex flex-col items-end text-right mb-6 pr-2">
+        <p className="text-[25px] text-black/65 mb-4 font-sans">Social</p>
+        <nav className="flex flex-col items-end gap-3">
           {["Instagram", "LinkedIn", "X"].map((item) => (
-            <a key={item} href="/contact" className="text-[36px] text-black leading-none font-sans hover:translate-x-2 transition-transform duration-300 w-fit">
+            <a key={item} href="/contact" className="text-[16px] text-black leading-none font-sans hover:-translate-x-2 transition-transform duration-300 w-fit">
               {item}
             </a>
           ))}
         </nav>
       </div>
 
-
+      {/* Legal Links Row */}
+      <div className="flex flex-row items-center gap-6 mt-8 mb-4 w-full pl-1">
+        <Link href="/terms" className="text-[16px] text-black leading-none font-sans hover:underline">
+          Terms & Conditions
+        </Link>
+        <Link href="/privacy" className="text-[16px] text-black leading-none font-sans hover:underline">
+          Privacy Policy
+        </Link>
+      </div>
 
       {/* Footer Bottom */}
-      <div className="flex items-center gap-6 mt-12 w-full pl-2">
+      <div className="flex items-center gap-6 mt-4 w-full pl-2">
         <span className="text-[25px] font-semibold text-black whitespace-nowrap">Explore More</span>
         <div className="flex-1 h-[1px] bg-[#b03000]/60 mt-1"></div>
       </div>

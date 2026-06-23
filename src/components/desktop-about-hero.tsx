@@ -36,7 +36,7 @@ export const DesktopAboutHero = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 7000); // 7 second duration per slide
+    }, 2000); // 2 second duration per slide
     return () => clearInterval(timer);
   }, []);
 
@@ -119,7 +119,7 @@ export const DesktopAboutHero = () => {
                    key={`line-${currentSlide}`}
                    initial={{ x: "-100%" }}
                    animate={{ x: 0 }}
-                   transition={{ duration: 7, ease: "linear" }}
+                   transition={{ duration: 2, ease: "linear" }}
                    className="absolute inset-0 bg-[#ff5100]"
                 />
              </div>
