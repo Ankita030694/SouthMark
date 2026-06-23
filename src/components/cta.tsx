@@ -89,7 +89,7 @@ export const Cta = () => {
                   <Link href="/contact" className="w-full mt-2">
                     <button className="bg-[#ff5100] text-white rounded-[82px] py-[15px] md:py-[18px] px-[35px] flex items-center justify-center gap-[6px] w-full hover:bg-[#e64700] transition-colors">
                       <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
-                      <span className="font-semibold text-[20px] md:text-[24px] leading-[20px] md:leading-[24px] whitespace-nowrap tracking-normal">Get Started</span>
+                      <span className="font-semibold text-[20px] md:text-[24px] leading-[20px] md:leading-[24px] whitespace-nowrap tracking-normal">Start Now</span>
                     </button>
                   </Link>
                 </div>
