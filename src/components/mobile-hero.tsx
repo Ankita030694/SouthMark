@@ -20,7 +20,7 @@ export function MobileHero() {
           parallax={0.5}
           iterations={1}
           intensity={1.5}
-          bandWidth={6}
+          bandWidth={12}
           transparent
         />
       </div>
@@ -47,7 +47,8 @@ export function MobileHero() {
             aria-label="Start Growing"
           >
             {/* Inner Left Pill */}
-            <div className="absolute left-[0px] top-0 w-[calc(100%-60px)] h-[63px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center justify-center z-10">
+            <div className="absolute left-[0px] top-0 w-[calc(100%-60px)] h-[63px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[4px_0px_6px_rgba(0,0,0,0.25)] flex items-center justify-center gap-[6px] z-10">
+              <div className="w-[8px] h-[8px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_8px_#00ff00] animate-pulse" />
               <span className="font-medium text-[18px] text-white tracking-tight whitespace-nowrap">
                 Start Growing
               </span>
@@ -96,16 +97,11 @@ export function MobileHero() {
       </div>
 
       {/* Logo Ticker */}
+      {/* 
       <div className="w-full relative overflow-hidden mt-16 py-4 z-10 bg-[#fffff0] border-t border-black/5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
-        {/* Left Blur/Fade Overlay */}
         <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fffff0] to-transparent z-20 pointer-events-none" />
-        
-        {/* Right Blur/Fade Overlay */}
         <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#fffff0] to-transparent z-20 pointer-events-none" />
-        
-        {/* Slider Track */}
         <div className="animate-logo-slide flex items-center w-max">
-          {/* Loop over the 15 logos twice to create a seamless infinite scroll */}
           {Array.from({ length: 30 }).map((_, index) => {
             const logoIndex = (index % 15) + 1;
             return (
@@ -120,6 +116,7 @@ export function MobileHero() {
           })}
         </div>
       </div>
+      */}
     </div>
   );
 }

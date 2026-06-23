@@ -35,28 +35,32 @@ export default function Home() {
       <div className="block md:hidden w-full min-h-screen bg-[#fffff0]">
         <MobileNav />
         <MobileHero />
-        <MobileIntegrations />
-        <MobileStats />
-        <MobileComparison />
-        <MobileServices />
-        <Cta />
-        <MobileFaq />
-        <MobileFooter />
+        <div style={{ zoom: 0.8 }}>
+          <MobileIntegrations />
+          <MobileStats />
+          <MobileComparison />
+          <MobileServices />
+          <Cta />
+          <MobileFaq />
+          <MobileFooter />
+        </div>
       </div>
 
       {/* Desktop Version - Visible only on desktop screens (>= 768px) */}
       <div className="hidden md:block w-full min-h-screen bg-[#fffff0]">
         <DesktopNav />
         <DesktopHero />
-        <DesktopIntegrations />
-        <DesktopStats />
-        <DesktopComparison />
-        <DesktopCaseStudies />
-        <DesktopServices />
-        <Cta />
-        <DesktopFaq />
-        <DesktopMarquee />
-        <DesktopFooter />
+        <div style={{ zoom: 0.8 }}>
+          <DesktopIntegrations />
+          <DesktopStats />
+          <DesktopComparison />
+          <DesktopCaseStudies />
+          <DesktopServices />
+          <Cta />
+          <DesktopFaq />
+          <DesktopMarquee />
+          <DesktopFooter />
+        </div>
       </div>
     </>
   );

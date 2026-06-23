@@ -60,7 +60,7 @@ export const MobileFaq = () => {
   ];
 
   return (
-    <div className="w-full bg-[#fffff0] px-5 py-16 relative flex flex-col items-center">
+    <div className="w-full bg-[#fffff0] px-5 pt-16 pb-6 relative flex flex-col items-center">
       
       {/* Header */}
       <p className="text-[18px] font-medium tracking-wide mb-4 text-center">

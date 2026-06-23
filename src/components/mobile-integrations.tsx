@@ -23,6 +23,11 @@ const logos = [
   "/integrations/sparkle.png",
   "/integrations/zoho.png",
   "/integrations/gemini.png",
+  // Row 5
+  "/integrations/tiktok.png",
+  "/integrations/snapchat.png",
+  "/integrations/cursor.png",
+  "/integrations/figma.png",
 ];
 
 const HexagonSvg = () => (
@@ -61,7 +66,8 @@ export function MobileIntegrations() {
     { total: 4, logoIndices: [0, 1, 2, 3] },
     { total: 5, logoIndices: [0, 1, 2, 3, 4] },
     { total: 4, logoIndices: [0, 1, 2, 3] },
-    { total: 5, logoIndices: [1, 2, 3] },
+    { total: 5, logoIndices: [0, 1, 2, 3, 4] },
+    { total: 4, logoIndices: [1, 2] },
   ];
 
   let currentLogoIndex = 0;

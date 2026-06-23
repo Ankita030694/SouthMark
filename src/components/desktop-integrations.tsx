@@ -10,21 +10,25 @@ const desktopLogos = [
   "/integrations/zapier.png",
   "/integrations/openai.png",
   "/integrations/meta.png",
-  // Row 2 (5)
+  "/integrations/tiktok.png",
+  // Row 2 (6)
   "/integrations/razorpay.png",
   "/integrations/sheets.png",
   "/integrations/gmail.png",
   "/integrations/google-calendar.png",
   "/integrations/gemini.png",
-  // Row 3 (4)
+  "/integrations/snapchat.png",
+  // Row 3 (5)
   "/integrations/payu.png",
   "/integrations/whatsapp.png",
   "/integrations/linkedin.png",
   "/integrations/sparkle.png",
-  // Row 4 (3)
+  "/integrations/cursor.png",
+  // Row 4 (4)
   "/integrations/zoho.png",
   "/integrations/wati.png",
   "/integrations/github.png",
+  "/integrations/figma.png",
 ];
 
 const HexagonSvg = () => (
@@ -62,10 +66,10 @@ const HexagonTile = ({ src, hasLogo }: { src?: string | null; hasLogo?: boolean 
 
 export const DesktopIntegrations = () => {
   const rowsConfig = [
-    { total: 9, logoIndices: [1, 2, 3, 4, 5, 6] },
-    { total: 10, logoIndices: [2, 3, 4, 5, 6] },
-    { total: 9, logoIndices: [2, 3, 4, 5] },
-    { total: 10, logoIndices: [3, 4, 5] },
+    { total: 9, logoIndices: [1, 2, 3, 4, 5, 6, 7] },
+    { total: 10, logoIndices: [2, 3, 4, 5, 6, 7] },
+    { total: 9, logoIndices: [2, 3, 4, 5, 6] },
+    { total: 10, logoIndices: [3, 4, 5, 6] },
   ];
 
   let currentLogoIndex = 0;

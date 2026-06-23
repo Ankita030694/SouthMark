@@ -26,8 +26,8 @@ export const DesktopNav = () => {
     <div className="absolute top-0 left-0 right-0 z-50 w-full px-6 md:px-10 py-4 flex flex-col gap-3 max-w-[1280px] mx-auto">
       {/* Top Bar */}
       <div className="flex justify-end w-full px-2">
-        <p className="text-[16px] md:text-[20px] text-black font-medium tracking-tight">
-          Say Hello- <span className="font-semibold">XXXXX XXXXX</span>
+        <p className="text-[16px] md:text-[20px] text-black font-medium tracking-tight flex items-center gap-1">
+          Say Hello- <a href="tel:9899238237" className="font-semibold hover:text-[#ff5100] transition-colors">9899238237</a>
         </p>
       </div>
 
@@ -63,18 +63,19 @@ export const DesktopNav = () => {
         </div>
 
         {/* CTA Button */}
-        <Link href="/contact" className="shrink-0">
-          <button className="h-[54px] bg-white rounded-full flex items-center pl-5 pr-[4px] gap-3 group hover:scale-[1.02] transition-transform">
-            <span className="text-black text-[22px] font-medium tracking-tight whitespace-nowrap pt-0.5">
-              Let's impress you
-            </span>
-            <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center relative overflow-hidden group-hover:rotate-45 transition-transform duration-300 shadow-inner">
-               <div className="absolute inset-0 bg-gradient-to-r from-[#ffa479] to-[#ff5100]" />
-               <div className="relative z-10 text-white">
-                 <ArrowRightIcon />
-               </div>
-            </div>
-          </button>
+        <Link 
+          href="/contact" 
+          className="shrink-0 h-[54px] bg-white rounded-full flex items-center pl-5 pr-[4px] gap-3 group hover:scale-[1.02] transition-transform"
+        >
+          <span className="text-black text-[22px] font-medium tracking-tight whitespace-nowrap pt-0.5">
+            Let's impress you
+          </span>
+          <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center relative overflow-hidden group-hover:rotate-45 transition-transform duration-300 shadow-inner">
+             <div className="absolute inset-0 bg-gradient-to-r from-[#ffa479] to-[#ff5100]" />
+             <div className="relative z-10 text-white">
+               <ArrowRightIcon />
+             </div>
+          </div>
         </Link>
       </nav>
     </div>

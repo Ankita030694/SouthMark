@@ -100,44 +100,39 @@ export default function Contact() {
             <div className="flex flex-col gap-5">
               <p className="text-[20px] font-medium text-black/65">Contact Details</p>
               <div className="flex flex-col gap-3 text-[28px] font-normal text-black leading-tight">
-                <p>+61 4XX XXX XXX</p>
+                <a href="tel:9899238237" className="hover:text-[#ff5100] transition-colors">9899238237</a>
                 <p>southern@email.com</p>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-col gap-8">
-              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                <ArrowUpRight />
-                <span className="text-[30px] font-medium tracking-tight">Instagram</span>
+            <div className="flex flex-row gap-8 mt-4">
+              <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="Instagram">
+                <InstagramIcon />
               </a>
-              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                <ArrowUpRight />
-                <span className="text-[30px] font-medium tracking-tight">LinkedIn</span>
+              <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="LinkedIn">
+                <LinkedinIcon />
               </a>
-              <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                <ArrowUpRight />
-                <span className="text-[30px] font-medium tracking-tight">Twitter/X</span>
+              <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="Twitter/X">
+                <XIcon />
               </a>
             </div>
           </div>
         </section>
 
         {/* Trusted By Section */}
+        {/*
         <section className="w-full mt-8 mb-20 flex flex-col items-center overflow-hidden">
           <p className="text-[28px] font-medium text-black mb-8 tracking-tight">
             Trusted by many
           </p>
           <div className="w-full flex items-center justify-between relative overflow-hidden h-[100px]">
-            {/* Left Bracket */}
             <span className="text-[#ff5100] text-[75px] font-medium absolute left-0 z-30 leading-none -top-2 bg-[#fffff0] pr-2 pointer-events-none">[</span>
             
-            {/* Logo Ticker Container */}
             <div className="w-full relative overflow-hidden h-full z-10 pl-[30px] pr-[30px]">
               <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#fffff0] to-transparent z-20 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#fffff0] to-transparent z-20 pointer-events-none" />
               
-              {/* Slider Track */}
               <div className="animate-logo-slide flex items-center w-max h-full">
                 {Array.from({ length: 30 }).map((_, index) => {
                   const logoIndex = (index % 15) + 1;
@@ -154,10 +149,10 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right Bracket */}
             <span className="text-[#ff5100] text-[75px] font-medium absolute right-0 z-30 leading-none -top-2 bg-[#fffff0] pl-2 pointer-events-none">]</span>
           </div>
         </section>
+        */}
 
         <Cta />
         <MobileFooter />
@@ -193,22 +188,19 @@ export default function Contact() {
                 Contact Details
               </p>
               <div className="flex flex-col gap-4 text-[24px] lg:text-[28px] text-black mb-16 font-normal">
-                <p>+61 4XX XXX XXX</p>
+                <a href="tel:9899238237" className="hover:text-[#ff5100] transition-colors">9899238237</a>
                 <p>southern@email.com</p>
               </div>
 
               {/* Social Links */}
-              <div className="flex flex-col gap-8">
-                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                  <ArrowUpRight />
+              <div className="flex flex-row gap-8">
+                <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="Instagram">
                   <InstagramIcon />
                 </a>
-                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                  <ArrowUpRight />
+                <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="LinkedIn">
                   <LinkedinIcon />
                 </a>
-                <a href="/contact" className="flex items-center gap-4 text-black hover:text-[#ff5100] transition-colors">
-                  <ArrowUpRight />
+                <a href="/contact" className="text-black hover:text-[#ff5100] transition-colors" aria-label="Twitter/X">
                   <XIcon />
                 </a>
               </div>
@@ -254,23 +246,18 @@ export default function Contact() {
         </section>
 
         {/* Trusted By Section */}
+        {/*
         <section className="w-full px-8 lg:px-[90px] mb-32 flex flex-col items-start max-w-[1500px] mx-auto">
           <p className="text-[28px] lg:text-[32px] font-medium text-black mb-10 tracking-tight">
             Trusted by many
           </p>
           <div className="w-full flex items-center justify-between relative overflow-hidden h-[100px] lg:h-[120px]">
-            {/* Left Bracket */}
             <span className="text-[#ff5100] text-[80px] lg:text-[96px] font-medium absolute left-0 z-30 leading-none -top-4 bg-[#fffff0] pr-4 pointer-events-none">[</span>
             
-            {/* Logo Ticker Container */}
             <div className="w-full relative overflow-hidden h-full z-10 pl-[50px] pr-[50px]">
-              {/* Left Blur/Fade Overlay */}
               <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#fffff0] to-transparent z-20 pointer-events-none" />
-              
-              {/* Right Blur/Fade Overlay */}
               <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#fffff0] to-transparent z-20 pointer-events-none" />
               
-              {/* Slider Track */}
               <div className="animate-logo-slide flex items-center w-max h-full">
                 {Array.from({ length: 30 }).map((_, index) => {
                   const logoIndex = (index % 15) + 1;
@@ -287,10 +274,10 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right Bracket */}
             <span className="text-[#ff5100] text-[80px] lg:text-[96px] font-medium absolute right-0 z-30 leading-none -top-4 bg-[#fffff0] pl-4 pointer-events-none">]</span>
           </div>
         </section>
+        */}
 
         <Cta />
         <DesktopFaq />

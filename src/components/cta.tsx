@@ -47,8 +47,8 @@ export const Cta = () => {
                 <div className="flex flex-col gap-[5px] md:gap-[15px] mb-[20px] md:mb-[30px]">
                   {/* Top row */}
                   <div className="flex items-center gap-[10px]">
-                    <img src="/assets/ellipse7.svg" alt="" className="w-[10px] h-[10px] shrink-0" />
-                    <p className="font-medium text-[16px] leading-[16px] text-[rgba(0,0,0,0.65)] tracking-[0.32px]">
+                    <div className="w-[10px] h-[10px] rounded-full bg-green-500 shrink-0 animate-pulse" />
+                    <p className="font-medium text-[16px] leading-[16px] text-green-600 tracking-[0.32px]">
                       AVAILABLE FOR PROJECT
                     </p>
                   </div>

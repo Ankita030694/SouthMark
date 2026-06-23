@@ -11,19 +11,34 @@ const ArrowRightIcon = () => (
 
 export const DesktopCaseStudies = () => {
   return (
-    <section className="w-full relative h-[900px] bg-[#f6f6f6] overflow-hidden">
+    <section className="w-full relative h-[1400px] bg-[#f6f6f6] overflow-hidden">
       
-      {/* Background Portfolio Grid (Abstracted as styled blocks like the design) */}
+      <style>{`
+        @keyframes slideRight {
+          0% { transform: translateX(calc(-50% - 1.25rem)); }
+          100% { transform: translateX(0); }
+        }
+        @keyframes slideLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-50% - 1.25rem)); }
+        }
+      `}</style>
+
+      {/* Background Portfolio Grid */}
       <div className="absolute w-full h-full inset-0 pointer-events-none">
-        {/* Row 1 */}
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[40px] left-[-150px] opacity-80" />
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[40px] left-[630px] opacity-80" />
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[40px] left-[1410px] opacity-80" />
+        {/* Row 1 (Top Row sliding left to right) */}
+        <div className="absolute top-[60px] left-[-1000px] flex gap-10 w-max" style={{ animation: 'slideRight 60s linear infinite' }}>
+          {[...[1, 2, 3, 4, 5, 6, 7], ...[1, 2, 3, 4, 5, 6, 7]].map((imgIdx, i) => (
+            <img key={`r1-${i}`} src={`/casestudies/${imgIdx}.jpg`} alt={`Case Study ${imgIdx}`} className="w-[1000px] h-[560px] object-cover rounded-[15px] opacity-80 shrink-0" />
+          ))}
+        </div>
         
-        {/* Row 2 (Staggered offset) */}
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[490px] left-[-450px] opacity-80" />
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[490px] left-[330px] opacity-80" />
-        <div className="absolute w-[750px] h-[420px] bg-[#ffacac] rounded-[15px] top-[490px] left-[1110px] opacity-80" />
+        {/* Row 2 (Bottom Row sliding right to left) */}
+        <div className="absolute top-[680px] left-[-1000px] flex gap-10 w-max" style={{ animation: 'slideLeft 60s linear infinite' }}>
+          {[...[8, 9, 10, 11, 12, 13, 14], ...[8, 9, 10, 11, 12, 13, 14]].map((imgIdx, i) => (
+            <img key={`r2-${i}`} src={`/casestudies/${imgIdx}.jpg`} alt={`Case Study ${imgIdx}`} className="w-[1000px] h-[560px] object-cover rounded-[15px] opacity-80 shrink-0" />
+          ))}
+        </div>
       </div>
 
       {/* Center Circle Content */}
