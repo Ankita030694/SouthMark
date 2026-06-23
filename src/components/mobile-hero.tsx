@@ -96,7 +96,7 @@ export function MobileHero() {
       </div>
 
       {/* Logo Ticker */}
-      <div className="w-full relative overflow-hidden mt-16 py-4 z-10">
+      <div className="w-full relative overflow-hidden mt-16 py-4 z-10 bg-[#fffff0] border-t border-black/5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
         {/* Left Blur/Fade Overlay */}
         <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fffff0] to-transparent z-20 pointer-events-none" />
         
