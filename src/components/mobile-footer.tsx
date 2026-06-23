@@ -23,8 +23,8 @@ export const MobileFooter = () => {
         <p className="text-[16px] font-medium text-black/65 mb-1 font-sans">
           Let's Build Something Great
         </p>
-        <a href="mailto:southern@email.com" className="text-[34px] text-black leading-none font-sans hover:text-white transition-colors duration-300">
-          southern@email.com
+        <a href="mailto:info@southernedgemarketing.com" className="text-[34px] text-black leading-none font-sans hover:text-white transition-colors duration-300">
+          info@southernedgemarketing.com
         </a>
       </div>
 

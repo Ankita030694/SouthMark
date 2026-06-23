@@ -133,8 +133,8 @@ export default function Contact() {
             <div className="flex flex-col gap-5">
               <p className="text-[20px] font-medium text-black/65">Contact Details</p>
               <div className="flex flex-col gap-3 text-[28px] font-normal text-black leading-tight">
-                <a href="tel:9899238237" className="hover:text-[#ff5100] transition-colors">9899238237</a>
-                <p>southern@email.com</p>
+                <a href="tel:+919899238237" className="hover:text-[#ff5100] transition-colors">+91 9899238237</a>
+                <p>info@southernedgemarketing.com</p>
               </div>
             </div>
 
@@ -220,8 +220,8 @@ export default function Contact() {
                 Contact Details
               </p>
               <div className="flex flex-col gap-4 text-[24px] lg:text-[28px] text-black mb-16 font-normal">
-                <a href="tel:9899238237" className="hover:text-[#ff5100] transition-colors">9899238237</a>
-                <p>southern@email.com</p>
+                <a href="tel:+919899238237" className="hover:text-[#ff5100] transition-colors">+91 9899238237</a>
+                <p>info@southernedgemarketing.com</p>
               </div>
 
               {/* Social Links */}

@@ -27,10 +27,10 @@ export const DesktopFooter = () => {
             Let's Build Something Great
           </p>
           <a 
-            href="mailto:southern@email.com" 
+            href="mailto:info@southernedgemarketing.com" 
             className="text-[32px] lg:text-[44px] text-black font-normal hover:text-white transition-colors duration-300"
           >
-            southern@email.com
+            info@southernedgemarketing.com
           </a>
         </div>
       </div>

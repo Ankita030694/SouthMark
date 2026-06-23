@@ -27,7 +27,7 @@ export const DesktopNav = () => {
       {/* Top Bar */}
       <div className="flex justify-end w-full px-2">
         <p className="text-[16px] md:text-[20px] text-black font-medium tracking-tight flex items-center gap-1">
-          Say Hello- <a href="tel:9899238237" className="font-semibold hover:text-[#ff5100] transition-colors">9899238237</a>
+          Say Hello- <a href="tel:+919899238237" className="font-semibold hover:text-[#ff5100] transition-colors">+91 9899238237</a>
         </p>
       </div>
 
