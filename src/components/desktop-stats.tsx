@@ -20,7 +20,7 @@ export const DesktopStats = () => {
           {/* Main Title */}
           <div className="flex-shrink-0 max-w-[300px]">
             <h3 className="text-[28px] lg:text-[36px] xl:text-[40px] font-medium leading-[1.1] text-[#30261c] tracking-tight">
-              Digital Success,<br />Delivered
+              Digital Success,<br /><span className="text-[#ff5100]">Delivered</span>
             </h3>
           </div>
 
