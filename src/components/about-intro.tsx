@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export function AboutIntro() {
   const headingText = "Hello! We're Southern Edge Marketing, a results-driven digital marketing agency helping businesses grow, scale, and succeed in the digital world.";
   const words = headingText.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -15,7 +15,7 @@ export function AboutIntro() {
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,
