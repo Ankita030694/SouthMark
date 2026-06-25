@@ -52,13 +52,14 @@ const HexagonSvg = () => (
 );
 
 const HexagonTile = ({ src, hasLogo }: { src?: string | null; hasLogo?: boolean }) => {
+  const isBlackBg = src && (src.includes('tiktok') || src.includes('cursor') || src.includes('figma'));
   return (
     <div className="relative group w-[100px] h-[110px] md:w-[130px] md:h-[143px] flex-shrink-0 flex items-center justify-center transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
       <div className={`absolute inset-0 transition-opacity duration-500 ${hasLogo ? 'opacity-100' : 'opacity-40 group-hover:opacity-60'}`}>
         <HexagonSvg />
       </div>
       {hasLogo && src && (
-        <img src={src} alt="Integration Logo" className="w-[45px] h-[45px] md:w-[60px] md:h-[60px] object-contain relative z-10 filter drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />
+        <img src={src} alt="Integration Logo" className={`w-[45px] h-[45px] md:w-[60px] md:h-[60px] object-contain relative z-10 filter drop-shadow-sm group-hover:scale-110 transition-transform duration-300 ${isBlackBg ? 'mix-blend-screen' : ''}`} />
       )}
     </div>
   );

@@ -52,13 +52,15 @@ export const DesktopComparison = () => {
           <span>what you get with us</span>
           
           {/* Custom Toggle Switch */}
-          <button 
-            onClick={() => setIsOn(!isOn)}
-            className={`relative w-[84px] h-[46px] rounded-full p-[3px] flex items-center shadow-inner cursor-pointer transition-colors duration-300 ${isOn ? 'bg-[#ff5100] hover:bg-[#e64a00]' : 'bg-gray-400 hover:bg-gray-500'} mx-2`}
-            aria-label="Toggle comparison"
-          >
-            <div className={`w-[40px] h-[40px] bg-white rounded-full shadow-sm transition-transform duration-300 ${isOn ? 'translate-x-[38px]' : 'translate-x-[0px]'}`}></div>
-          </button>
+          <div className="relative inline-flex items-center mx-2">
+            <button 
+              onClick={() => setIsOn(!isOn)}
+              className={`relative w-[84px] h-[46px] rounded-full p-[3px] flex items-center shadow-inner cursor-pointer transition-colors duration-300 ${isOn ? 'bg-[#ff5100] hover:bg-[#e64a00]' : 'bg-gray-400 hover:bg-gray-500'}`}
+              aria-label="Toggle comparison"
+            >
+              <div className={`w-[40px] h-[40px] bg-white rounded-full shadow-sm transition-transform duration-300 ${isOn ? 'translate-x-[38px]' : 'translate-x-[0px]'}`}></div>
+            </button>
+          </div>
           
           <span>versus what most agencies</span>
           <span className={highlightClass}>offer.</span>
@@ -69,7 +71,7 @@ export const DesktopComparison = () => {
       <div className="w-full max-w-[1400px] mx-auto bg-white rounded-[20px] shadow-sm flex overflow-hidden border border-black/5 min-h-[500px]">
         
         {/* Left Side: Other Agencies */}
-        <div className={`w-1/2 p-10 lg:p-14 xl:p-16 flex flex-col transition-colors duration-300 ${!isOn ? 'bg-black text-white' : 'bg-transparent text-black'}`}>
+        <div className={`w-1/2 p-10 lg:p-14 xl:p-16 flex flex-col transition-colors duration-300 ${!isOn ? 'bg-[#6b7282] text-white' : 'bg-transparent text-black'}`}>
           <h3 className="text-[32px] xl:text-[35px] font-medium mb-6">
             Other Agencies
           </h3>

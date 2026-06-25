@@ -24,18 +24,22 @@ export default function ServicesPage() {
       <div className="block md:hidden w-full min-h-screen bg-[#fffff0]">
         <MobileNav />
         <MobileServicesPage />
-        <Cta />
-        <MobileFaq />
-        <MobileFooter />
+        <div style={{ zoom: 0.8 }}><Cta /></div>
+        <div style={{ zoom: 0.8 }}>
+          <MobileFaq />
+          <MobileFooter />
+        </div>
       </div>
 
       {/* Desktop Version - Visible only on desktop screens (>= 768px) */}
       <div className="hidden md:block w-full min-h-screen bg-[#fffff0]">
         <DesktopNav />
         <DesktopServicesPage />
-        <Cta />
-        <DesktopFaq />
-        <DesktopFooter />
+        <div style={{ zoom: 0.8 }}><Cta /></div>
+        <div style={{ zoom: 0.8 }}>
+          <DesktopFaq />
+          <DesktopFooter />
+        </div>
       </div>
     </>
   );

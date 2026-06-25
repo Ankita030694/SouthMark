@@ -51,11 +51,12 @@ const HexagonSvg = () => (
 );
 
 const HexagonTile = ({ src, hasLogo }: { src?: string | null; hasLogo?: boolean }) => {
+  const isBlackBg = src && (src.includes('tiktok') || src.includes('cursor') || src.includes('figma'));
   return (
     <div className="relative group w-[74px] h-[80px] flex-shrink-0 flex items-center justify-center transition-transform duration-300 hover:-translate-y-1">
       <HexagonSvg />
       {hasLogo && src && (
-        <img src={src} alt="Integration Logo" className="w-[36px] h-[36px] object-contain relative z-10 filter drop-shadow-sm" />
+        <img src={src} alt="Integration Logo" className={`w-[36px] h-[36px] object-contain relative z-10 filter drop-shadow-sm ${isBlackBg ? 'mix-blend-screen' : ''}`} />
       )}
     </div>
   );

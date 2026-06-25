@@ -1,74 +1,84 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, PanInfo } from "framer-motion";
 
 const ArrowRightIcon = () => (
-  <svg className="w-[21px] h-[21px] text-white" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-[16px] h-[16px] text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
   </svg>
 );
 
+const images = [
+  "/website.jpg",
+  "/meta.jpg",
+  "/photoshoot.jpg"
+];
+
 export const DesktopCaseStudies = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const handleDragEnd = (e: any, { offset, velocity }: PanInfo) => {
+    const swipe = offset.x;
+    if (swipe < -50) {
+      setIndex((prev) => (prev + 1) % images.length);
+    } else if (swipe > 50) {
+      setIndex((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
+
   return (
     <section className="w-full relative h-[1120px] bg-[#f6f6f6] overflow-hidden">
       
-      <style>{`
-        @keyframes slideRight {
-          0% { transform: translateX(calc(-50% - 1.25rem)); }
-          100% { transform: translateX(0); }
-        }
-        @keyframes slideLeft {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-50% - 1.25rem)); }
-        }
-      `}</style>
+      {/* Draggable Slider Background */}
+      <motion.div
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        dragElastic={0.2}
+        onDragEnd={handleDragEnd}
+        animate={{ x: `-${index * 100}%` }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute top-0 left-0 w-full h-full flex cursor-grab active:cursor-grabbing"
+      >
+        {images.map((img, i) => (
+          <div 
+            key={i} 
+            className="min-w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url('${img}')` }}
+          />
+        ))}
+      </motion.div>
 
-      {/* Background Portfolio Grid */}
-      <div className="absolute w-full h-full inset-0 pointer-events-none">
-        {/* Row 1 (Top Row sliding left to right) */}
-        <div className="absolute top-[48px] left-[-800px] flex gap-8 w-max" style={{ animation: 'slideRight 60s linear infinite' }}>
-          {[...[1, 2, 3, 4, 5, 6, 7], ...[1, 2, 3, 4, 5, 6, 7]].map((imgIdx, i) => (
-            <img key={`r1-${i}`} src={`/casestudies/${imgIdx}.jpg`} alt={`Case Study ${imgIdx}`} className="w-[800px] h-[448px] object-cover rounded-[12px] opacity-80 shrink-0" />
-          ))}
-        </div>
-        
-        {/* Row 2 (Bottom Row sliding right to left) */}
-        <div className="absolute top-[544px] left-[-800px] flex gap-8 w-max" style={{ animation: 'slideLeft 60s linear infinite' }}>
-          {[...[8, 9, 10, 11, 12, 13, 14], ...[8, 9, 10, 11, 12, 13, 14]].map((imgIdx, i) => (
-            <img key={`r2-${i}`} src={`/casestudies/${imgIdx}.jpg`} alt={`Case Study ${imgIdx}`} className="w-[800px] h-[448px] object-cover rounded-[12px] opacity-80 shrink-0" />
-          ))}
-        </div>
-      </div>
-
-      {/* Center Circle Content */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[480px] h-[480px] bg-[#f9f9f9] rounded-full shadow-[0px_0px_24px_rgba(0,0,0,0.15)] border border-white/50 flex flex-col items-center justify-center z-10 p-8 text-center">
+      {/* Center Box Content - Glassmorphism Square */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-auto py-12 px-8 bg-white/60 backdrop-blur-2xl rounded-[32px] border border-white/50 shadow-[0_24px_60px_-15px_rgba(0,0,0,0.3)] flex flex-col items-center justify-center z-10 text-center pointer-events-none">
         
         {/* Text Group */}
         <div className="flex flex-col items-center mb-8">
-          <div className="flex items-baseline gap-3 justify-center">
-            <span className="text-[88px] leading-[1] font-normal text-black tracking-tight">50+</span>
-            <span className="text-[52px] leading-[1] font-normal text-black tracking-tight">Detailed</span>
+          <div className="flex items-baseline gap-2 justify-center">
+            <span className="text-[72px] leading-[1] font-bold text-[#0f0f0f] tracking-tight">1500+</span>
           </div>
-          <span className="text-[52px] leading-[1] font-normal text-black tracking-tight mt-2">Case Studies</span>
+          <span className="text-[40px] leading-[1] font-semibold text-[#0f0f0f] tracking-tight mt-2">Projects</span>
+          <span className="text-[40px] leading-[1] font-semibold text-[#0f0f0f] tracking-tight mt-1">Delivered</span>
         </div>
 
         {/* Explore Projects Button */}
-        <Link href="/contact">
+        <Link href="/contact" className="pointer-events-auto">
           <button 
-            className="relative w-[254px] h-[72px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] overflow-hidden shadow-[0px_5px_13px_rgba(255,81,0,0.35)] hover:shadow-[0px_6px_16px_rgba(255,81,0,0.5)] transition-shadow group cursor-pointer"
+            className="flex items-center justify-center gap-3 w-[220px] h-[56px] rounded-full bg-gradient-to-r from-[#ff5100] to-[#ff7300] shadow-[0_4px_14px_rgba(255,81,0,0.4)] hover:shadow-[0_8px_24px_rgba(255,81,0,0.6)] hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
             aria-label="Explore Projects"
           >
-            {/* Inner Left Pill */}
-            <div className="absolute left-0 top-0 w-[180px] h-[72px] rounded-full bg-gradient-to-b from-[#ffa479] to-[#ff5100] drop-shadow-[3px_0px_5px_rgba(0,0,0,0.25)] flex items-center pl-[28px] gap-[5px] transform group-hover:translate-x-[3px] transition-transform duration-300 z-10">
-              <div className="w-[6px] h-[6px] rounded-full bg-[#00ff00] shrink-0 shadow-[0_0_6px_#00ff00] animate-pulse" />
-              <span className="font-medium text-[20px] text-white tracking-tight">
-                Explore Projects
-              </span>
-            </div>
-            
-            {/* Right Arrow Icon */}
-            <div className="absolute right-[28px] top-1/2 -translate-y-1/2 flex items-center justify-center transform group-hover:translate-x-[4px] transition-transform duration-300 z-0">
+            <span className="font-semibold text-[16px] text-white tracking-wide">
+              Explore Projects
+            </span>
+            <div className="transform group-hover:translate-x-1.5 transition-transform duration-300">
               <ArrowRightIcon />
             </div>
           </button>

@@ -22,16 +22,16 @@ export default function BlogsPage() {
       <div className="block md:hidden w-full min-h-screen bg-[#fffff0]">
         <MobileNav />
         <MobileBlogs />
-        <Cta />
-        <MobileFooter />
+        <div style={{ zoom: 0.8 }}><Cta /></div>
+        <div style={{ zoom: 0.8 }}><MobileFooter /></div>
       </div>
 
       {/* Desktop Version - Visible only on desktop screens (>= 768px) */}
       <div className="hidden md:block w-full min-h-screen bg-[#fffff0]">
         <DesktopNav />
         <DesktopBlogs />
-        <Cta />
-        <DesktopFooter />
+        <div style={{ zoom: 0.8 }}><Cta /></div>
+        <div style={{ zoom: 0.8 }}><DesktopFooter /></div>
       </div>
     </>
   );

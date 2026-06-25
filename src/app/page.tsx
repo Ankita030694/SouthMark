@@ -4,6 +4,7 @@ import { MobileIntegrations } from "@/components/mobile-integrations";
 
 import { MobileStats } from "@/components/mobile-stats";
 import { MobileComparison } from "@/components/mobile-comparison";
+import { MobileCaseStudies } from "@/components/mobile-case-studies";
 import { MobileServices } from "@/components/mobile-services";
 import { MobileFaq } from "@/components/mobile-faq";
 import { MobileFooter } from "@/components/mobile-footer";
@@ -39,6 +40,7 @@ export default function Home() {
           <MobileIntegrations />
           <MobileStats />
           <MobileComparison />
+          <MobileCaseStudies />
           <MobileServices />
           <Cta />
           <MobileFaq />

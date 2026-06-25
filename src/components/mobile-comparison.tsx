@@ -53,7 +53,7 @@ export const MobileComparison = () => {
       <div className="rounded-[20px] overflow-hidden flex flex-col shadow-sm border border-gray-100/50">
         
         {/* Other Agencies Card */}
-        <div className={`p-6 pt-7 pb-10 transition-colors duration-300 ${!isOn ? 'bg-[#0F0F0F] text-white' : 'bg-white text-black'}`}>
+        <div className={`p-6 pt-7 pb-10 transition-colors duration-300 ${!isOn ? 'bg-[#6b7282] text-white' : 'bg-white text-black'}`}>
           <h3 className="text-[28px] font-medium mb-4">Other Agencies</h3>
           <div className={`w-full h-[1px] mb-6 transition-colors duration-300 ${!isOn ? 'bg-white/30' : 'bg-gray-300'}`}></div>
           

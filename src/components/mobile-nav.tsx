@@ -21,7 +21,7 @@ export function MobileNav() {
   return (
     <div className="w-full relative z-50">
       {/* Base Navbar (Always visible at the bottom layer) */}
-      <div className="h-[68px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-40 bg-[rgba(255,255,240,0.1)]">
+      <div className="h-[68px] w-full flex items-center justify-between px-8 md:px-10 absolute top-0 left-0 z-40 bg-[rgba(255,255,240,0.1)]">
         {/* Logo Placeholder */}
         <div className="h-9 w-9 rounded-full border-2 border-[#ff5100] bg-white/10 flex items-center justify-center">
           <span className="text-[#ff5100] text-xs font-bold">SM</span>
@@ -54,7 +54,7 @@ export function MobileNav() {
         {/* Inner Content - Fixed height prevents squishing during height transition */}
         <div className="w-full relative" style={{ height: '425px' }}>
           {/* White Header (perfectly overlays the base header) */}
-          <div className="h-[68px] w-full flex items-center justify-between px-4 absolute top-0 left-0 z-50">
+          <div className="h-[68px] w-full flex items-center justify-between px-8 md:px-10 absolute top-0 left-0 z-50">
             <div className="h-9 w-9 rounded-full border-2 border-white bg-white/20 flex items-center justify-center">
               <span className="text-white text-xs font-bold">SM</span>
             </div>

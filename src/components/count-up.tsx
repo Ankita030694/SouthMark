@@ -19,7 +19,7 @@ export function CountUp({
   className = "",
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
   
   const motionValue = useMotionValue(from);
   const springValue = useSpring(motionValue, {

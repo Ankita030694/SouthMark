@@ -6,6 +6,8 @@ import { MobileFooter } from "@/components/mobile-footer";
 import { MobileFaq } from "@/components/mobile-faq";
 import { DesktopAboutHero } from "@/components/desktop-about-hero";
 import { DesktopAboutTeam } from "@/components/desktop-about-team";
+import { AboutPageHero } from "@/components/about-page-hero";
+import { AboutIntro } from "@/components/about-intro";
 import { Cta } from "@/components/cta";
 
 import { Metadata } from "next";
@@ -26,17 +28,21 @@ export default function About() {
       </div>
 
       <main className="flex-grow">
-        <DesktopAboutHero />
+        <AboutPageHero />
+        <AboutIntro />
+        {/* <DesktopAboutHero /> */}
         <DesktopAboutTeam />
       </main>
 
-      <Cta />
+      <div style={{ zoom: 0.8 }}>
+        <Cta />
+      </div>
 
-      <div className="hidden md:block">
+      <div className="hidden md:block" style={{ zoom: 0.8 }}>
         <DesktopFaq />
         <DesktopFooter />
       </div>
-      <div className="md:hidden">
+      <div className="md:hidden" style={{ zoom: 0.8 }}>
         <MobileFaq />
         <MobileFooter />
       </div>

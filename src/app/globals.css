@@ -13,10 +13,16 @@
   
   /* Define custom animation */
   --animate-logo-slide: logo-slide 35s linear infinite;
+  --animate-text-shine: text-shine 4s linear infinite;
 
   @keyframes logo-slide {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes text-shine {
+    from { background-position: 200% center; }
+    to { background-position: -200% center; }
   }
 }
 

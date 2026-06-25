@@ -8,23 +8,24 @@ export const DesktopHero = () => {
   return (
     <div className="w-full flex flex-col bg-[#fffff0]">
       {/* Hero Content Full Screen Wrapper */}
-      <div className="w-full relative flex flex-col items-center min-h-screen pt-[160px] pb-12 overflow-hidden">
+      <div className="w-full relative flex flex-col items-center min-h-screen pt-[245px] pb-12 overflow-hidden">
         {/* Background ColorBends */}
         <div className="absolute inset-0 z-0 w-full h-full">
           <ColorBends
-            colors={["#e25309"]}
             rotation={90}
             speed={0.7}
+            colors={["#e25309"]}
+            transparent
+            autoRotate={0}
             scale={1}
             frequency={1}
-            warpStrength={1}
+            warpStrength={0.98}
             mouseInfluence={1}
-            noise={0.15}
             parallax={0.5}
+            noise={0.15}
             iterations={1}
-            intensity={1.5}
-            bandWidth={12}
-            transparent
+            intensity={1.2}
+            bandWidth={10.5}
           />
         </div>
 
@@ -104,15 +105,14 @@ export const DesktopHero = () => {
       </div>
 
       {/* Logo Ticker */}
-      {/* 
-      <div className="w-full relative overflow-hidden py-8 z-10 bg-[#fffff0] border-t border-black/5 shadow-[0_-4px_20px_rgba(0,0,0,0.03)]">
+      <div className="w-full relative overflow-hidden pb-6 pt-4 z-10">
         <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#fffff0] to-transparent z-20 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#fffff0] to-transparent z-20 pointer-events-none" />
         <div className="animate-logo-slide flex items-center w-max">
           {Array.from({ length: 30 }).map((_, index) => {
             const logoIndex = (index % 15) + 1;
             return (
-              <div key={index} className="h-[96px] lg:h-[120px] w-[384px] mx-[10px] relative flex items-center justify-center shrink-0 transition-all duration-300">
+              <div key={index} className="h-[70px] lg:h-[90px] w-[250px] mx-[20px] relative flex items-center justify-center shrink-0">
                 <img 
                   src={`/clientlogo/logo-${logoIndex}.png`} 
                   alt={`Client Logo ${logoIndex}`} 
@@ -123,7 +123,6 @@ export const DesktopHero = () => {
           })}
         </div>
       </div>
-      */}
     </div>
   );
 };
